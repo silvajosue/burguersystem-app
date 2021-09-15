@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Login } from '../model/Login';
+import { UsuarioDTO } from '../model/UsuarioDTO';
+import { LoginService } from '../service/login.service';
 
 @Component({
   selector: 'app-login',
@@ -9,12 +13,16 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   formulario: FormGroup;
- // login: Login = new Login();
+  login: Login = new Login();
+  usuario: UsuarioDTO;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private service: LoginService,  
+              private router: Router,  private route: ActivatedRoute,
+              ) { }
 
   ngOnInit(): void {
     this.createForm();
+    console.log("cheguei");
   }
 
   public createForm(): void {
@@ -24,7 +32,22 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  public cadastrar(): void {
+  public entrar(): void {
+    this.login = new Login();
+    this.login.email = this.formulario.get("username").value;
+    this.login.senha = this.formulario.get("password").value;
+
+    this.service.realizarLogin(this.login).subscribe(
+      sucesso => {
+        console.log(sucesso);
+        this.usuario = sucesso;
+        sessionStorage.setItem("usuarioSessao", JSON.stringify(this.usuario));
+        this.router.navigate(['../material'])
+      }, 
+      erro => {
+        alert(erro);
+      }
+    )
 
   }
 }

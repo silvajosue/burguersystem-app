@@ -1,1 +1,44 @@
-<p>cadastrar-material works!</p>
+<p-card class="card-style">
+    <form [formGroup]="formulario">
+        <div class="div-style">
+            <p-fieldset legend="Cadastrar Material" class="usuario-login">
+                <span class="p-float-label">
+                    <label for="nome">Nome:</label>
+                    <br />
+                    <input id="nome" formControlName="nome" type="text" pInputText>
+                </span>
+                <br />
+                <span class="p-float-label">
+                    <label for="categoria">Categoria:</label>
+                    <br />
+                    <input id="categoria" formControlName="categoria" type="text" pInputText>
+                </span>
+                <br />
+                <span class="p-float-label">
+                    <label for="preco">Preço:</label>
+                    <br />
+                    <input id="preco" formControlName="preco" type="text" pInputText>
+                </span>
+                <br />
+                <span class="p-float-label">
+                    <label for="foto">Unidade de Medida:</label>
+                    <br />
+                    <input id="foto" formControlName="unidadeMedida" type="text" pInputText>
+                </span>
+                <br />
+                <span class="p-float-label">
+                    <label for="quantidade">Quantidade:</label>
+                    <br />
+                    <input id="quantidade" formControlName="quantidade" type="text" pInputText>
+                </span>
+
+            </p-fieldset>
+        </div>
+    </form>
+    <p-footer>
+        <button pButton type="button" label="Cadastrar" class="p-button-success" (click)="cadastrar()">
+        </button>
+        <button pButton type="button" label="Limpar" class="p-button-warning" (click)="limpar()">
+        </button>
+    </p-footer>
+</p-card>

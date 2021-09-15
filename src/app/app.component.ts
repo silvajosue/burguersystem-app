@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng-lts/api/menuitem';
+import { UsuarioDTO } from './login/model/UsuarioDTO';
 
 
 @Component({
