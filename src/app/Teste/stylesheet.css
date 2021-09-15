@@ -1,0 +1,22 @@
+.titulo{
+    font-size: 2rem;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.formulario{
+    display: block;
+    flex-direction: row;
+}
+.i_preencher{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.p_formulario{
+    display: block;
+    flex-direction: row;
+}
+.i_formulario{
+    display: block;
+    flex-direction: row;
+}
