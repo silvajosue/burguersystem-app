@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "burguersystem-app"
+  "defaultProject": "burguersystem-app",
+  "cli": {
+    "analytics": false
+  }
 }
