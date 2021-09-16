@@ -9,7 +9,7 @@ export class UsuarioDTO{
 	private  email: String;
 	private senha: String;
 	private role: String;
-	private tokenDTO: TokenDTO;
+	public tokenDTO: TokenDTO;
 
     $getToken(): TokenDTO{
         return this.tokenDTO;

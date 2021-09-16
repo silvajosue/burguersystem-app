@@ -14,7 +14,7 @@ export class LoginService extends BaseService {
   }
 
   public realizarLogin(login: Login): Observable<any>{
-    return this.http.post<any[]>(this.urlBase + 'login', login/*, { headers: this.httpOptionsJson  }*/);
+    return this.http.post<any[]>(this.urlBase + 'login', login);
   }
 
 }

@@ -1,12 +1,12 @@
 export class TokenDTO{
-    private token: String;
-	private tipo: String;
+    public token: String;
+	public tipo: String;
 
-    $getToken(): String{
+    getToken(): String{
         return this.token;
     }
 
-    $getTipo(): String{
+    getTipo(): String{
         return this.tipo;
     }
 }
