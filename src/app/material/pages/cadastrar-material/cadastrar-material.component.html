@@ -1,40 +1,54 @@
 <p-card class="card-style">
+    <a class="button" href="#">Voltar</a>
+    <h1 class="titulo" >Cadastro de Materiais</h1>
     <form [formGroup]="formulario">
-        <div class="div-style">
-            <p-fieldset legend="Cadastrar Material" class="usuario-login">
-                <span class="p-float-label">
-                    <label for="nome">Nome:</label>
-                    <br />
-                    <input id="nome" formControlName="nome" type="text" pInputText>
-                </span>
-                <br />
-                <span class="p-float-label">
-                    <label for="categoria">Categoria:</label>
-                    <br />
-                    <input id="categoria" formControlName="categoria" type="text" pInputText>
-                </span>
-                <br />
-                <span class="p-float-label">
-                    <label for="preco">Preço:</label>
-                    <br />
-                    <input id="preco" formControlName="preco" type="text" pInputText>
-                </span>
-                <br />
-                <span class="p-float-label">
-                    <label for="foto">Unidade de Medida:</label>
-                    <br />
-                    <input id="foto" formControlName="unidadeMedida" type="text" pInputText>
-                </span>
-                <br />
-                <span class="p-float-label">
-                    <label for="quantidade">Quantidade:</label>
-                    <br />
-                    <input id="quantidade" formControlName="quantidade" type="text" pInputText>
-                </span>
-
-            </p-fieldset>
-        </div>
+            <div class="i_preencher">
+                <div class="p_formulario">
+                    <p class="p_form" >Nome</p>
+                </div>
+                    <input class="i_text" type="text">
+            </div>
+            <div class="i_preencher">
+                <div class="p_formulario">
+                    <p class="p_form" >Categoria </p>
+                </div>
+                    <input class="i_text" type="text">
+            </div>
+            <div class="i_preencher">
+                <div class="p_formulario">
+                    <p class="p_form" >Preço</p>
+                </div>
+                    <input class="i_text" type="text">
+            </div>
+            <div class="i_preencher">
+                <div class="p_formulario">
+                    <p class="p_form" >Foto </p>
+                </div>
+                    <input class="i_text" type="text">
+            </div>
+            <div class="i_preencher">
+                <div class="p_formulario">
+                    <p class="p_form" >Quantidade </p>
+                </div>
+                    <input class="i_text" type="text">
+            </div>
     </form>
+    <div class="fim_pagina">
+        <table>
+            <tr>
+            <td>
+                <div>
+                    <a class="button" (click)="cadastrar()">Cancelar</a>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <a class="button" (click)="limpar()">Enviar</a>
+                </div>
+            </td>       
+            </tr>
+        </table>
+    </div>
     <p-footer>
         <button pButton type="button" label="Cadastrar" class="p-button-success" (click)="cadastrar()">
         </button>
