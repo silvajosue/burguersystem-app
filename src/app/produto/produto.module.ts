@@ -1,17 +1,34 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
-import { ProdutoRoutingModule } from './produto-routing.module';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng-lts/button';
+import { CardModule } from 'primeng-lts/card';
+import { FieldsetModule } from 'primeng-lts/fieldset';
+import { InputTextModule } from 'primeng-lts/inputtext';
+import { MaterialRoutingModule } from '../material/material-routing.module';
 import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
-import { RouterModule, Routes } from '@angular/router';
+import { ProdutoRoutingModule } from './produto-routing.module';
+
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [CadastrarProdutoComponent],
   imports: [
     CommonModule,
-    ProdutoRoutingModule
-  ]
+    MaterialRoutingModule,
+    CardModule,
+    FormsModule,
+    CommonModule,
+    HttpClientModule,
+    FieldsetModule,
+    InputTextModule,
+    ReactiveFormsModule,
+    ButtonModule,
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [ProdutoRoutingModule]
 })
 export class ProdutoModule { }
