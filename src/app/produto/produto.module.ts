@@ -18,7 +18,7 @@ import { ProdutoRoutingModule } from './produto-routing.module';
   declarations: [CadastrarProdutoComponent],
   imports: [
     CommonModule,
-    MaterialRoutingModule,
+    ProdutoRoutingModule,
     CardModule,
     FormsModule,
     CommonModule,
