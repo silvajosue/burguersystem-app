@@ -4,33 +4,33 @@
     <form [formGroup]="formulario">
             <div class="i_preencher">
                 <div class="p_formulario">
-                    <p class="p_form"  formControlName="nome" >Nome</p>
+                    <p class="p_form" >Nome</p>
                 </div>
-                    <input class="i_text" type="text">
+                    <input class="i_text" type="text" formControlName="nome">  <!-- <--- formControlName fica no input, ele pega o dado que sera inputado -->
             </div>
             <div class="i_preencher">
                 <div class="p_formulario">
-                    <p class="p_form"  formControlName="categoria" >Categoria </p>
+                    <p class="p_form" >Categoria </p>
                 </div>
-                    <input class="i_text" type="text">
+                    <input class="i_text" type="text" formControlName="categoria">
             </div>
             <div class="i_preencher">
                 <div class="p_formulario">
-                    <p class="p_form"  formControlName="preco" >Preço</p>
+                    <p class="p_form"  >Preço</p>
                 </div>
-                    <input class="i_text" type="text">
+                    <input class="i_text" type="text" formControlName="preco">
             </div>
             <div class="i_preencher">
                 <div class="p_formulario">
-                    <p class="p_form"  formControlName="unidadeMedida" >Medida </p>
+                    <p class="p_form"  >Medida </p>
                 </div>
-                    <input class="i_text" type="text">
+                    <input class="i_text" type="text"  formControlName="unidadeMedida">
             </div>
             <div class="i_preencher">
                 <div class="p_formulario">
-                    <p class="p_form"  formControlName="quantidade" >Quantidade </p>
+                    <p class="p_form"  >Quantidade </p>
                 </div>
-                    <input class="i_text" type="text">
+                    <input class="i_text" type="text"  formControlName="quantidade">
             </div>
     </form>
     <div class="fim_pagina">
@@ -43,16 +43,10 @@
             </td>
             <td>
                 <div>
-                    <a class="button" (click)="limpar()">Limpar</a>
+                    <a class="button" (click)="limpar()">limpar</a>
                 </div>
             </td>       
             </tr>
         </table>
     </div>
-    <p-footer>
-        <button pButton type="button" label="Cadastrar" class="p-button-success" (click)="cadastrar()">
-        </button>
-        <button pButton type="button" label="Limpar" class="p-button-warning" (click)="limpar()">
-        </button>
-    </p-footer>
 </p-card>
