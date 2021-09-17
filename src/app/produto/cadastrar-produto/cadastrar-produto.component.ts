@@ -54,7 +54,7 @@ export class CadastrarProdutoComponent implements OnInit {
   }
 
   public limpar(): void{
-    
+    this.formulario.reset();
   }
 
 }
