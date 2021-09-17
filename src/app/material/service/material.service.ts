@@ -10,6 +10,8 @@ import { BaseService } from 'src/app/shared/service/BaseService';
 })
 export class MaterialService extends BaseService {
 
+  private rota: string = 'api/material';
+
   constructor(public http: HttpClient) {
     super();
   }
@@ -18,11 +20,11 @@ export class MaterialService extends BaseService {
     let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
     console.log(usuarioSessao);
     console.log(token);
-    return this.http.get<MaterialDTO[]>(this.urlBase + 'material', this.criaHeader(token));
+    return this.http.get<MaterialDTO[]>(this.urlBase + this.rota, this.criaHeader(token));
   }
 
   public postMaterial(material: MaterialDTO, usuarioSessao: UsuarioDTO): Observable<any>{
     let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
-    return this.http.post<any>(this.urlBase + 'material/cadastrarMaterial', material, this.criaHeader(token));
+    return this.http.post<any>(this.urlBase + this.rota + '/cadastrarMaterial', material, this.criaHeader(token));
   }
 }

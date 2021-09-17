@@ -10,6 +10,7 @@ import { InputTextModule } from 'primeng-lts/inputtext';
 import { MaterialRoutingModule } from '../material/material-routing.module';
 import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
 import { ProdutoRoutingModule } from './produto-routing.module';
+import { ProdutoService } from './service/produto.service';
 
 
 
@@ -29,6 +30,6 @@ import { ProdutoRoutingModule } from './produto-routing.module';
     ButtonModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [ProdutoRoutingModule]
+  providers: [ProdutoRoutingModule, ProdutoService]
 })
 export class ProdutoModule { }

@@ -35,32 +35,32 @@ export class CadastrarMaterialComponent implements OnInit {
   }
 
   public cadastrar(): void{
-    // this.materialDto = new MaterialDTO();
-    // console.log(String(this.formulario.get('nome').value))
-    // this.materialDto.nome = String(this.formulario.get('nome').value);
-    // this.materialDto.preco = Number(this.formulario.get('preco').value);
-    // this.materialDto.quantidade = Number(this.formulario.get('quantidade').value);
-    // this.materialDto.unidadeMedida = String(this.formulario.get('unidadeMedida').value);
+    this.materialDto = new MaterialDTO();
+    console.log(String(this.formulario.get('nome').value))
+    this.materialDto.nome = String(this.formulario.get('nome').value);
+    this.materialDto.preco = Number(this.formulario.get('preco').value);
+    this.materialDto.quantidade = Number(this.formulario.get('quantidade').value);
+    this.materialDto.unidadeMedida = String(this.formulario.get('unidadeMedida').value);
 
     this.usuario = JSON.parse(sessionStorage.getItem("usuarioSessao"));
 
-    // this.service.postMaterial(this.materialDto, this.usuario).subscribe(
-    //   (sucesso) => {
-    //     alert(sucesso)
-    //   }, 
-    //   (erro) => {
-    //     alert(erro)
-    //   }
-    // );
-
-    this.service.getListaMateriais(this.usuario).subscribe(
-      sucesso => {
-        console.log(sucesso);
-      },
-      erro => {
-        console.log(erro);
+    this.service.postMaterial(this.materialDto, this.usuario).subscribe(
+      (sucesso) => {
+        alert(sucesso)
+      }, 
+      (erro) => {
+        alert(erro)
       }
-    )
+    );
+
+    // this.service.getListaMateriais(this.usuario).subscribe(
+    //   sucesso => {
+    //     console.log(sucesso);
+    //   },
+    //   erro => {
+    //     console.log(erro);
+    //   }
+    // )
 
   }
 
