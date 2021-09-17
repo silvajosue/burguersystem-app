@@ -24,6 +24,11 @@ export class AppComponent implements OnInit {
         icon: 'pi pi-fw pi-plus',
         routerLink: 'material'
       },
+      {
+        label: 'Produto',
+        icon: 'pi pi-fw pi-plus',
+        routerLink: 'produto'
+      },
     ]
   }
 }

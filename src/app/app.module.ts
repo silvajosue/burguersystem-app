@@ -6,14 +6,12 @@ import { MenubarModule } from 'primeng-lts/menubar';
 import { MenuModule } from 'primeng/menu';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CadastrarProdutoComponent
   ],
   imports: [
     BrowserModule,
