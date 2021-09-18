@@ -1,4 +1,7 @@
 <p-card class="card-style">
+    <div class="img">
+        <img src="logo.jpg" width="150" height="150">
+    </div>
     <form [formGroup]="formulario">
         <div class="div-style">
             <p-fieldset legend="Login" class="usuario-login">
@@ -7,10 +10,8 @@
                     <br />
                     <input id="username" formControlName="username" class="username" type="text" pInputText>
                 </span>
-                <br />
-                <br />
                 <span class="p-float-label">
-                    <label for="password">Senha:</label>
+                    <label  for="password">Senha:</label>
                     <br />
                     <input id="password" formControlName="password" type="password" pInputText>
                 </span>
@@ -18,10 +19,20 @@
             </p-fieldset>
         </div>
     </form>
-    <p-footer>
-        <button pButton type="button" label="Entrar" class="ui-button-success" (click)="entrar()">
-        </button>
-        <button pButton type="button" label="Cadastrar" class="ui-button-infor" >
-        </button>
-    </p-footer>
+    <div class="fim_pagina">
+        <table>
+            <tr>
+                <td>
+                    <div>
+                        <a class="button" (click)="entrar()">Entrar</a>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <a class="button">Cadastrar</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
 </p-card>
