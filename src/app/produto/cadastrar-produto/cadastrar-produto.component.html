@@ -1,52 +1,52 @@
 <p-card class="card-style">
-  <a class="button" href="#">Voltar</a>
-  <h1 class="titulo" >Cadastro de Produtos</h1>
-  <form>
-          <div class="i_preencher">
-              <div class="p_formulario">
-                  <p class="p_form" >Nome</p>
-              </div>
-                  <input class="i_text" type="text" formControlName="nome">
-          </div>
-          <div class="i_preencher">
-              <div class="p_formulario">
-                  <p class="p_form" >Preço</p>
-              </div>
-                  <input class="i_text" type="text" formControlName="preco">
-          </div>
-          <div class="i_preencher">
-              <div class="p_formulario">
-                  <p class="p_form" >Quantidade </p>
-              </div>
-                  <input class="i_text" type="text" formControlName="quantidade">
-          </div>
-          <div class="i_preencher">
+    <a class="button" href="#">Voltar</a>
+    <h1 class="titulo">Cadastro de Produtos</h1>
+    <form [formGroup]="formulario">
+        <div class="i_preencher">
             <div class="p_formulario">
-                <p class="p_form" >Unidade </p>
+                <p class="p_form">Nome</p>
             </div>
-                <select formControlName="unidade">
-                  <option>KG</option>
-                  <option>Lt</option>
-                  <option>Unidade</option>
-                  <option>Ml</option>
-                  <option>Gr</option>
-                </select>
+            <input class="i_text" type="text" formControlName="nome">
         </div>
-  </form>
-  <div class="fim_pagina">
-    <table>
-        <tr>
-        <td>
-            <div>
-                <a class="button" (click)="cadastrar()">Cadastrar</a>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Preço</p>
             </div>
-        </td>
-        <td>
-            <div>
-                <a class="button" (click)="limpar()">limpar</a>
+            <input class="i_text" type="text" formControlName="preco">
+        </div>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Quantidade </p>
             </div>
-        </td>       
-        </tr>
-    </table>
-</div>
+            <input class="i_text" type="text" formControlName="quantidade">
+        </div>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Categoria </p>
+            </div>
+            <input class="i_text" type="text" formControlName="categoria">
+        </div>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Foto </p>
+            </div>
+            <input class="i_text" type="text" formControlName="foto">
+        </div>
+    </form>
+    <div class="fim_pagina">
+        <table>
+            <tr>
+                <td>
+                    <div>
+                        <a class="button" (click)="cadastrar()">Cadastrar</a>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <a class="button" (click)="limpar()">limpar</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
 </p-card>

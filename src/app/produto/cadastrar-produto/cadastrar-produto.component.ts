@@ -27,8 +27,8 @@ export class CadastrarProdutoComponent implements OnInit {
       nome: [],
       categoria: [],
       preco: [],
-      unidadeMedida: [],
-      quantidade: []
+      quantidade: [],
+      foto: [],
     });
   }
 
@@ -38,8 +38,11 @@ export class CadastrarProdutoComponent implements OnInit {
     console.log(String(this.formulario.get('nome').value))
     this.produto.nome = String(this.formulario.get('nome').value);
     this.produto.preco = Number(this.formulario.get('preco').value);
-    this.produto.codCategoria = Number(this.formulario.get('quantidade').value);
-    this.produto.foto = String(this.formulario.get('unidadeMedida').value);
+    this.produto.codCategoria = Number(this.formulario.get('categoria').value);
+    this.produto.foto = String(this.formulario.get('foto').value);
+    this.produto.quantidade = Number(this.formulario.get('quantidade').value);
+
+    console.log(this.produto)
 
     this.usuario = JSON.parse(sessionStorage.getItem("usuarioSessao"));
 

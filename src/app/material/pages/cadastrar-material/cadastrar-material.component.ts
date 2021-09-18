@@ -29,7 +29,7 @@ export class CadastrarMaterialComponent implements OnInit {
       nome: [],
       categoria: [],
       preco: [],
-      unidadeMedida: [],
+      unidade: [],
       quantidade: []
     });
   }
@@ -40,10 +40,13 @@ export class CadastrarMaterialComponent implements OnInit {
     this.materialDto.nome = String(this.formulario.get('nome').value);
     this.materialDto.preco = Number(this.formulario.get('preco').value);
     this.materialDto.quantidade = Number(this.formulario.get('quantidade').value);
-    this.materialDto.unidadeMedida = String(this.formulario.get('unidadeMedida').value);
+    this.materialDto.unidadeMedida = String(this.formulario.get('unidade').value);
+
+    console.log(this.formulario.get('unidade').value);
 
     this.usuario = JSON.parse(sessionStorage.getItem("usuarioSessao"));
 
+    console.log(this.materialDto)
     this.service.postMaterial(this.materialDto, this.usuario).subscribe(
       (sucesso) => {
         alert(sucesso)

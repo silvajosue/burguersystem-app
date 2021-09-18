@@ -1,51 +1,52 @@
 <p-card class="card-style">
     <a class="button" href="#">Voltar</a>
-    <h1 class="titulo" >Cadastro de Materiais</h1>
+    <h1 class="titulo">Cadastro de Materiais</h1>
     <form [formGroup]="formulario">
-            <div class="i_preencher">
-                <div class="p_formulario">
-                    <p class="p_form" >Nome</p>
-                </div>
-                    <input class="i_text" type="text" formControlName="nome">  <!-- <--- formControlName fica no input, ele pega o dado que sera inputado -->
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Nome</p>
             </div>
-            <div class="i_preencher">
-                <div class="p_formulario">
-                    <p class="p_form" >Categoria </p>
-                </div>
-                    <input class="i_text" type="text" formControlName="categoria">
+            <input class="i_text" type="text" formControlName="nome">
+            <!-- <--- formControlName fica no input, ele pega o dado que sera inputado -->
+        </div>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form" type="number">Preço</p>
             </div>
-            <div class="i_preencher">
-                <div class="p_formulario">
-                    <p class="p_form" type="number" >Preço</p>
-                </div>
-                    <input class="i_text" type="text" formControlName="preco">
+            <input class="i_text" type="text" formControlName="preco">
+        </div>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form" type="int">Quantidade </p>
             </div>
-            <div class="i_preencher">
-                <div class="p_formulario">
-                    <p class="p_form"  >Medida </p>
-                </div>
-                    <input class="i_text" type="text"  formControlName="unidadeMedida">
+            <input class="i_text" type="text" formControlName="quantidade">
+        </div>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Unidade de Medida </p>
             </div>
-            <div class="i_preencher">
-                <div class="p_formulario">
-                    <p class="p_form" type="int" >Quantidade </p>
-                </div>
-                    <input class="i_text" type="text"  formControlName="quantidade">
-            </div>
+            <select formControlName="unidade">
+                <option value="KG">KG</option>
+                <option value="Lt">Lt</option>
+                <option value="Un">Unidade</option>
+                <option value="ML">Ml</option>
+                <option value="Gr">Gr</option>
+            </select>
+        </div>
     </form>
     <div class="fim_pagina">
         <table>
             <tr>
-            <td>
-                <div>
-                    <a class="button" (click)="cadastrar()">Cadastrar</a>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <a class="button" (click)="limpar()">limpar</a>
-                </div>
-            </td>       
+                <td>
+                    <div>
+                        <a class="button" (click)="cadastrar()">Cadastrar</a>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <a class="button" (click)="limpar()">limpar</a>
+                    </div>
+                </td>
             </tr>
         </table>
     </div>
