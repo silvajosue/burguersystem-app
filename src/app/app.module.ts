@@ -6,12 +6,18 @@ import { MenubarModule } from 'primeng-lts/menubar';
 import { MenuModule } from 'primeng/menu';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CadfuncionarioComponent } from './cadfuncionario/cadfuncionario.component';
+import { CadreceitaComponent } from './cadreceita/cadreceita.component';
+import { CadclienteComponent } from './cadcliente/cadcliente.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    CadfuncionarioComponent,
+    CadreceitaComponent,
+    CadclienteComponent,
   ],
   imports: [
     BrowserModule,
