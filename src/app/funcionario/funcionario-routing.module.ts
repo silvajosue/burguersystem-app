@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CadfuncionarioComponent } from './cadfuncionario.component';
+import { CadfuncionarioComponent } from './pages/cadastro-funcionario/cadfuncionario.component';
 
 const routes: Routes = [
   {
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class CadfuncionarioRoutingModule { }
+export class FuncionarioRoutingModule { }

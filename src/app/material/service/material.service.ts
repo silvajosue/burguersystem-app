@@ -17,14 +17,14 @@ export class MaterialService extends BaseService {
   }
 
   public getListaMateriais(usuarioSessao: UsuarioDTO): Observable<MaterialDTO[]>{
-    let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
+    let token = usuarioSessao.$token.$tipo + '' + usuarioSessao.$token.$token;
     console.log(usuarioSessao);
     console.log(token);
     return this.http.get<MaterialDTO[]>(this.urlBase + this.rota, this.criaHeader(token));
   }
 
   public postMaterial(material: MaterialDTO, usuarioSessao: UsuarioDTO): Observable<any>{
-    let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
+    let token = usuarioSessao.$token.$tipo + '' + usuarioSessao.$token.$token;
     return this.http.post<any>(this.urlBase + this.rota + '/cadastrarMaterial', material, this.criaHeader(token));
   }
 }

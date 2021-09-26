@@ -1,21 +1,21 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA,NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { CadclienteRoutingModule } from './cadcliente-routing.module';
+import { FuncionarioRoutingModule } from './funcionario-routing.module';
+import { CadfuncionarioComponent } from './pages/cadastro-funcionario/cadfuncionario.component';
 import { CardModule } from 'primeng-lts/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FieldsetModule } from 'primeng-lts/fieldset';
 import { InputTextModule } from 'primeng-lts/inputtext';
 import { ButtonModule } from 'primeng-lts/button';
-import { CadclienteComponent } from './cadcliente.component';
+
 
 
 @NgModule({
-  declarations: [CadclienteComponent],
+  declarations: [CadfuncionarioComponent],
   imports: [
     CommonModule,
-    CadclienteRoutingModule,
+    FuncionarioRoutingModule,
     CardModule,
     FormsModule,
     CommonModule,
@@ -26,6 +26,6 @@ import { CadclienteComponent } from './cadcliente.component';
     ButtonModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [CadclienteRoutingModule]
+  providers: [FuncionarioRoutingModule]
 })
-export class CadclienteModule { }
+export class FuncionarioModule { }

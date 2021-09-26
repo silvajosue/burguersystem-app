@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as moment from 'moment';
 import { MenuItem } from 'primeng-lts/api/menuitem';
 import { UsuarioDTO } from './login/model/UsuarioDTO';
 
@@ -45,5 +46,14 @@ export class AppComponent implements OnInit {
         routerLink: 'cadreceita'
       },
     ]
+
+    setTimeout(() => {
+      let usuario: UsuarioDTO = JSON.parse(sessionStorage.getItem("usuarioSessao"));
+      let dataModifica = new Date(document.lastModified);
+      if(moment(usuario.tempoSessao).isAfter(dataModifica) ){
+        sessionStorage.clear();
+      }
+    }, 960000);
   }
+
 }

@@ -1,4 +1,20 @@
 export class Login{
-    public email: String;
-    public senha: String;
+    private email: String;
+    private senha: String;
+
+    get $email(): String{
+        return  this.email;
+    }
+
+    get $senha(): String{
+        return this.senha;
+    }
+
+    set $senha(senha){
+        this.senha = senha;
+    }
+
+    set $email(email){
+        this.email = email;
+    }
 }

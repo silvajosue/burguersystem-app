@@ -9,22 +9,35 @@ export class UsuarioDTO{
 	private  email: String;
 	private senha: String;
 	private role: String;
-	public tokenDTO: TokenDTO;
+	private tokenDTO: TokenDTO;
+    public tempoSessao: number;
 
-    $getToken(): TokenDTO{
+    get $token(): TokenDTO{
         return this.tokenDTO;
     }
 
-    $getRole(): String{
+    get $role(): String{
         return this.role;
     }
 
-    $getLogin(): String{
+    get $login(): String{
         return this.nome;
     }
 
-    $getSenha(): String{
+    get $senha(): String{
         return this.senha;
+    }
+
+    get $codigoUsuario(): Number{
+        return this.codigoUsuario;
+    }
+
+    get $tempoSessao(): number{
+        return this.tempoSessao
+    }
+
+    set $setTempoSessao(data: number){
+        this.tempoSessao = data;
     }
 
 }

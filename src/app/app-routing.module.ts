@@ -4,8 +4,8 @@ import { LoginModule } from './login/login.module';
 import { MaterialModule } from './material/material.module';
 import { ProdutoModule } from './produto/produto.module';
 import { CadclienteModule } from './cadcliente/cadcliente.module';
-import { CadfuncionarioModule } from './cadfuncionario/cadfuncionario.module';
 import { CadreceitaModule } from './cadreceita/cadreceita.module';
+import { FuncionarioModule } from './funcionario/funcionario.module';
 
 const routes: Routes = [
   {
@@ -26,7 +26,7 @@ const routes: Routes = [
   },
   {
     path:'cadfuncionario',
-    loadChildren: () => CadfuncionarioModule
+    loadChildren: () => FuncionarioModule
   },
   {
     path:'cadreceita',

@@ -17,7 +17,7 @@ export class ProdutoService extends BaseService {
   }
 
   public postProduto(produto: ProdutoDTO, usuarioSessao: UsuarioDTO): Observable<any>{
-    let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
+    let token = usuarioSessao.$token.$tipo + '' + usuarioSessao.$token.$token;
     return this.http.post<any>(this.urlBase + this.rota + '/cadastrarProduto', produto, this.criaHeader(token));
   }
   
