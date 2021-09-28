@@ -1,1 +1,96 @@
-<p>cadreceita works!</p>
+<p-card class="card-style">
+    <a class="button" href="#">Voltar</a>
+    <h1 class="titulo">Cadastro de Receita</h1>
+    <form>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Categoria</p>
+            </div>
+            <select formControlName="categoria">
+                <option value="lanche">Lanche</option>
+                <option value="acompanhamento">Acompanhamento</option>
+                <option value="sobremesa">Sobremesa</option>
+            </select>
+        </div>
+        <div class="i_preencher">
+          <div class="p_formulario">
+              <p class="p_form">Nome</p>
+          </div>
+          <input class="i_text" type="text" formControlName="nome">
+      </div>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Preco</p>
+            </div>
+            <input class="i_text" type="text" formControlName="preco">
+        </div>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Foto </p>
+            </div>
+            <input class="i_text" type="text" formControlName="foto">
+        </div>
+
+        <h1 class="titulo">Ingredientes</h1>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Ingrediente</p>
+            </div>
+            <select formControlName="ingrediente">
+                <option value="pao_gergilim">Pão com gergelim</option>
+                <option value="pao_fio">Pão de fio</option>
+                <option value="H_carne">hambúrguer de carne</option>
+                <option value="H_picanha">hambúrguer de picanha</option>
+                <option value="H_frango">hambúrguer de frango</option>
+                <option value="tomate">Tomate</option>
+                <option value="alface">Alface</option>
+                <option value="bacon">Bacon</option>
+                <option value="catchup">Catchup</option>
+                <option value="maionese">Maionese</option>
+            </select>
+            <div class="p_formulario">
+                <p class="p_form">Quantidade</p>
+            </div>
+            <input class="i_text" type="text" formControlName="quantidade">
+            <div class="p_formulario">
+                <p class="p_form">Unidade de Medida</p>
+            </div>
+            <select formControlName="medida">
+                <option value="KG">KG</option>
+                <option value="Lt">Lt</option>
+                <option value="Un">Unidade</option>
+                <option value="ML">Ml</option>
+                <option value="Gr">Gr</option>
+            </select>
+        </div>
+        
+        <div class="fim_pagina">
+            <table>
+                <tr>
+                    <td>
+                        <div>
+                            <a class="button" (click)="addingrediente()">+</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+    <div class="fim_pagina">
+      <table>
+          <tr>
+              <td>
+                  <div>
+                      <a class="button" (click)="cadastrar()">Cadastrar</a>
+                  </div>
+              </td>
+              <td>
+                  <div>
+                      <a class="button" (click)="limpar()">limpar</a>
+                  </div>
+              </td>
+          </tr>
+      </table>
+  </div>
+  </p-card>
+  

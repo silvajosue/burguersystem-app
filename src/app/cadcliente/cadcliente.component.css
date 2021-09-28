@@ -38,6 +38,11 @@ p-footer{
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.titulo{
+    font-size: 2rem;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 .formulario{
     display: block;
     flex-direction: row;
