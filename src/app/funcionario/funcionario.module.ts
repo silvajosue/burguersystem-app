@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FieldsetModule } from 'primeng-lts/fieldset';
 import { InputTextModule } from 'primeng-lts/inputtext';
 import { ButtonModule } from 'primeng-lts/button';
+import { FuncionarioService } from './service/funcionario.service';
 
 
 
@@ -26,6 +27,6 @@ import { ButtonModule } from 'primeng-lts/button';
     ButtonModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [FuncionarioRoutingModule]
+  providers: [FuncionarioRoutingModule, FuncionarioService]
 })
 export class FuncionarioModule { }

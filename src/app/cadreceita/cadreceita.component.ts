@@ -12,4 +12,13 @@ export class CadreceitaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public cadastrar(): void {
+    alert("ok");
+  }
+
+  public limpar(): void {
+    // this.formulario.reset();
+    alert("Ok");
+  }
+
 }

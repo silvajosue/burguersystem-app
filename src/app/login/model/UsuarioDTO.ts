@@ -1,16 +1,19 @@
+import { Role } from "src/app/dto/Role";
 import { TokenDTO } from "./TokenDTO";
 
 export class UsuarioDTO{
     private codigoUsuario: Number;
-	private nome: String;
-	private foto: String;
-	private cpf: String;
-	private telefone: String;
-	private  email: String;
+	public nome: String;
+	public foto: String;
+	public cpf: String;
+	public telefone: String;
+	public  email: String;
 	private senha: String;
-	private role: String;
-	private tokenDTO: TokenDTO;
+	public role: String;
+	public tokenDTO: TokenDTO;
     public tempoSessao: number;
+    public roles: Role = new Role();
+    public ativo: Boolean
 
     get $token(): TokenDTO{
         return this.tokenDTO;
@@ -28,6 +31,10 @@ export class UsuarioDTO{
         return this.senha;
     }
 
+    set $senha(senha: String){
+        this.senha = senha;
+    }
+
     get $codigoUsuario(): Number{
         return this.codigoUsuario;
     }
@@ -38,6 +45,10 @@ export class UsuarioDTO{
 
     set $setTempoSessao(data: number){
         this.tempoSessao = data;
+    }
+
+    set $email(email: String){
+        this.email = email
     }
 
 }

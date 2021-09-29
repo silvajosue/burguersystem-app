@@ -1,7 +1,7 @@
 <p-card class="card-style">
   <a class="button" href="#">Voltar</a>
   <h1 class="titulo">Cadastro de Funcionário</h1>
-  <form>
+  <form [formGroup]="formulario">
       <div class="i_preencher">
           <div class="p_formulario">
               <p class="p_form">Nome</p>
@@ -30,23 +30,24 @@
           <div class="p_formulario">
               <p class="p_form">Email </p>
           </div>
-          <input class="i_text" type="text" formControlName="email">
+          <input class="i_text" type="email" formControlName="email">
       </div>
       <div class="i_preencher">
           <div class="p_formulario">
               <p class="p_form">Senha</p>
           </div>
-          <input class="i_text" type="text" formControlName="senha">
+          <input class="i_text" type="password" formControlName="senha">
       </div>
       <div class="i_preencher">
         <div class="p_formulario">
             <p class="p_form">Função</p>
         </div>
-        <select formControlName="funcao">
-            <option value="gerente">Gerente</option>
-            <option value="atendente">Atendente</option>
-            <option value="cozinheiro">Cozinheiro</option>
-            <option value="Entregador">Entregador</option>
+        <select formControlName="role">
+            <option value="1">Garçom</option>
+            <option value="2">Gerente</option>
+            <option value="3">Atendente</option>
+            <option value="4">Cozinheiro</option>
+            <option value="5">Entregador</option>
         </select>
     </div>
     <div class="i_preencher">
@@ -54,8 +55,8 @@
             <p class="p_form">Ativo</p>
         </div>
         <select formControlName="ativo">
-            <option value="sim">Ativo</option>
-            <option value="nao">Desativo</option>
+            <option value="0">Desativado</option>
+            <option value="1">Ativado</option>
         </select>
         </div>
   </form>
