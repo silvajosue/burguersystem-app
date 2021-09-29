@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginModule } from './login/login.module';
 import { MaterialModule } from './material/material.module';
 import { ProdutoModule } from './produto/produto.module';
-import { CadclienteModule } from './cadcliente/cadcliente.module';
-import { CadreceitaModule } from './cadreceita/cadreceita.module';
 import { FuncionarioModule } from './funcionario/funcionario.module';
+import { ClienteModule } from './cliente/cliente.module';
+import { ReceitaModule } from './receita/receita.module';
 
 const routes: Routes = [
   {
@@ -22,7 +22,7 @@ const routes: Routes = [
   },
   {
     path:'cadcliente',
-    loadChildren: () => CadclienteModule
+    loadChildren: () => ClienteModule
   },
   {
     path:'cadfuncionario',
@@ -30,7 +30,7 @@ const routes: Routes = [
   },
   {
     path:'cadreceita',
-    loadChildren: () => CadreceitaModule
+    loadChildren: () => ReceitaModule
   }
 
 

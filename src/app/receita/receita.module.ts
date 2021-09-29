@@ -1,14 +1,14 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CadreceitaRoutingModule } from './cadreceita-routing.module';
+import { ReceitaRoutingModule } from './receita-routing.module';
 import { CardModule } from 'primeng-lts/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FieldsetModule } from 'primeng-lts/fieldset';
 import { InputTextModule } from 'primeng-lts/inputtext';
 import { ButtonModule } from 'primeng-lts/button';
-import { CadreceitaComponent } from './cadreceita.component';
+import { CadreceitaComponent } from './pages/cadreceita/cadreceita.component';
 
 
 @NgModule({
@@ -23,8 +23,9 @@ import { CadreceitaComponent } from './cadreceita.component';
     InputTextModule,
     ReactiveFormsModule,
     ButtonModule,
+    ReceitaRoutingModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [CadreceitaRoutingModule]
+  providers: [ReceitaRoutingModule]
 })
-export class CadreceitaModule { }
+export class ReceitaModule { }
