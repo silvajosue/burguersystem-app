@@ -13,7 +13,6 @@ import { HomeatendenteComponent } from './home/homeatendente/homeatendente.compo
 import { StatuspedidoComponent } from './pedido/pages/statuspedido/statuspedido.component';
 import { ConsultaestoqueComponent } from './estoque/consultaestoque/consultaestoque.component';
 import { ConsultafuncionarioComponent } from './funcionario/consultafuncionario/consultafuncionario.component';
-import { ConsultareceitaComponent } from './receita/consultareceita/consultareceita.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +23,7 @@ import { ConsultareceitaComponent } from './receita/consultareceita/consultarece
     HomeatendenteComponent,
     StatuspedidoComponent,
     ConsultaestoqueComponent,
-    ConsultafuncionarioComponent,
-    ConsultareceitaComponent,
+    ConsultafuncionarioComponent
   ],
   imports: [
     BrowserModule,

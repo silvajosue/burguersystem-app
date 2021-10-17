@@ -12,7 +12,6 @@ import { HomegerenteModule } from './home/homegerente/homegerente.module';
 import { HomeatendenteModule } from './home/homeatendente/homeatendente.module';
 import { ConsultaestoqueModule } from './estoque/consultaestoque/consultaestoque.module';
 import { ConsultafuncionarioModule } from './funcionario/consultafuncionario/consultafuncionario.module';
-import { ConsultareceitaModule } from './receita/consultareceita/consultareceita.module';
 
 
 const routes: Routes = [
@@ -64,10 +63,6 @@ const routes: Routes = [
     path:'consultafuncionario',
     loadChildren: () => ConsultafuncionarioModule
   },
-  {
-    path:'consultareceita',
-    loadChildren: () => ConsultareceitaModule
-  }
 
 ];
 
