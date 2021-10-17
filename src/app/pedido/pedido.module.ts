@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CadpedidoRoutingModule } from './cadpedido-routing.module';
+import { PedidoRoutingModule } from './pedido-routing.module';
 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    CadpedidoRoutingModule
+    PedidoRoutingModule
   ]
 })
-export class CadpedidoModule { }
+export class PedidoModule { }

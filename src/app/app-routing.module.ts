@@ -6,14 +6,13 @@ import { ProdutoModule } from './produto/produto.module';
 import { FuncionarioModule } from './funcionario/funcionario.module';
 import { ClienteModule } from './cliente/cliente.module';
 import { ReceitaModule } from './receita/receita.module';
-import { CadpedidoModule } from './cadpedido/cadpedido.module';
-import { HomecozinheiroModule } from './homecozinheiro/homecozinheiro.module';
-import { HomegerenteModule } from './homegerente/homegerente.module';
-import { HomeatendenteModule } from './homeatendente/homeatendente.module';
-import { StatuspedidoModule } from './statuspedido/statuspedido.module';
-import { ConsultaestoqueModule } from './consultaestoque/consultaestoque.module';
-import { ConsultafuncionarioModule } from './consultafuncionario/consultafuncionario.module';
-import { ConsultareceitaModule } from './consultareceita/consultareceita.module';
+import { PedidoModule } from './pedido/pedido.module';
+import { HomecozinheiroModule } from './home/homecozinheiro/homecozinheiro.module';
+import { HomegerenteModule } from './home/homegerente/homegerente.module';
+import { HomeatendenteModule } from './home/homeatendente/homeatendente.module';
+import { ConsultaestoqueModule } from './estoque/consultaestoque/consultaestoque.module';
+import { ConsultafuncionarioModule } from './funcionario/consultafuncionario/consultafuncionario.module';
+import { ConsultareceitaModule } from './receita/consultareceita/consultareceita.module';
 
 
 const routes: Routes = [
@@ -43,7 +42,7 @@ const routes: Routes = [
   },
   {
     path:'cadpedido',
-    loadChildren: () => CadpedidoModule
+    loadChildren: () => PedidoModule
   },
   {
     path:'homecozinheiro',
@@ -56,10 +55,6 @@ const routes: Routes = [
   {
     path:'homeatendente',
     loadChildren: () => HomeatendenteModule
-  },
-  {
-    path:'statuspedido',
-    loadChildren: () => StatuspedidoModule
   },
   {
     path:'consultaestoque',
