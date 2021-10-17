@@ -6,14 +6,15 @@ import { ProdutoModule } from './produto/produto.module';
 import { FuncionarioModule } from './funcionario/funcionario.module';
 import { ClienteModule } from './cliente/cliente.module';
 import { ReceitaModule } from './receita/receita.module';
-import { cadpedidoModule } from './cadpedido/cadpedido.module';
-import { homecozinheiroModule } from './homecozinheiro/homecozinheiro.module';
-import { homegerenteModule } from './homegerente/homegerente.module';
-import { homeatendenteModule } from './homeatendente/homeatendente.module';
-import { statuspedidoModule } from './statuspedido/statuspedido.module';
-import { consultaestoqueModule } from './consultaestoque/consultaestoque.module';
-import { consultafuncionarioModule } from './consultafuncionario/consultafuncionario.module';
-import { consultareceitaModule } from './consultareceita/consultareceita.module';
+import { CadpedidoModule } from './cadpedido/cadpedido.module';
+import { HomecozinheiroModule } from './homecozinheiro/homecozinheiro.module';
+import { HomegerenteModule } from './homegerente/homegerente.module';
+import { HomeatendenteModule } from './homeatendente/homeatendente.module';
+import { StatuspedidoModule } from './statuspedido/statuspedido.module';
+import { ConsultaestoqueModule } from './consultaestoque/consultaestoque.module';
+import { ConsultafuncionarioModule } from './consultafuncionario/consultafuncionario.module';
+import { ConsultareceitaModule } from './consultareceita/consultareceita.module';
+
 
 const routes: Routes = [
   {
@@ -42,35 +43,35 @@ const routes: Routes = [
   },
   {
     path:'cadpedido',
-    loadChildren: () => cadpedidoModule
+    loadChildren: () => CadpedidoModule
   },
   {
     path:'homecozinheiro',
-    loadChildren: () => homecozinheiroModule
+    loadChildren: () => HomecozinheiroModule
   },
   {
     path:'homegerente',
-    loadChildren: () => homegerenteModule
+    loadChildren: () => HomegerenteModule
   },
   {
     path:'homeatendente',
-    loadChildren: () => homeatendenteModule
+    loadChildren: () => HomeatendenteModule
   },
   {
     path:'statuspedido',
-    loadChildren: () => statuspedidoModule
+    loadChildren: () => StatuspedidoModule
   },
   {
     path:'consultaestoque',
-    loadChildren: () => consultaestoqueModule
+    loadChildren: () => ConsultaestoqueModule
   },
   {
     path:'consultafuncionario',
-    loadChildren: () => consultafuncionarioModule
+    loadChildren: () => ConsultafuncionarioModule
   },
   {
     path:'consultareceita',
-    loadChildren: () => consultareceitaModule
+    loadChildren: () => ConsultareceitaModule
   }
 
 ];

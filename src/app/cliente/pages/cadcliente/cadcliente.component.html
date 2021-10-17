@@ -1,74 +1,72 @@
-
 <p-card class="card-style">
-  <a class="button" href="#">Voltar</a>
-  <h1 class="titulo">Cadastro de Cliente</h1>
-  <form>
-      <div class="i_preencher">
-          <div class="p_formulario">
-              <p class="p_form">Nome</p>
-          </div>
-          <input class="i_text" type="text" formControlName="nome">
-      </div>
-      <div class="i_preencher">
-        <div class="p_formulario">
-            <p class="p_form">Telefone </p>
+    <a class="button" href="#">Voltar</a>
+    <h1 class="titulo">Cadastro de Cliente</h1>
+    <form [formGroup]="formulario">
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Nome</p>
+            </div>
+            <input class="i_text" type="text" formControlName="nome">
         </div>
-        <input class="i_text" type="text" formControlName="telefone">
-    </div>
-      <div class="i_preencher">
-          <div class="p_formulario">
-              <p class="p_form">CPF</p>
-          </div>
-          <input class="i_text" type="text" formControlName="cpf">
-      </div>
-  </form>
-  <form>
-    <h1 class="titulo">Endereço do Cliente</h1>
-      <div class="i_preencher">
-          <div class="p_formulario">
-              <p class="p_form">Logadouro</p>
-          </div>
-          <input class="i_text" type="text" formControlName="logadouro">
-      </div>
-      <div class="i_preencher">
-          <div class="p_formulario">
-              <p class="p_form">Numero </p>
-          </div>
-          <input class="i_text" type="text" formControlName="numero">
-      </div>
-      <div class="i_preencher">
-          <div class="p_formulario">
-              <p class="p_form">Bairro</p>
-          </div>
-          <input class="i_text" type="text" formControlName="bairro">
-      </div>
-      <div class="i_preencher">
-        <div class="p_formulario">
-            <p class="p_form">Cidade</p>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Telefone </p>
+            </div>
+            <input class="i_text" type="text" formControlName="telefone">
         </div>
-        <input class="i_text" type="text" formControlName="cidade">
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">CPF</p>
+            </div>
+            <input class="i_text" type="text" formControlName="cpf">
+        </div>
+
+        <h1 class="titulo">Endereço do Cliente</h1>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Logadouro</p>
+            </div>
+            <input class="i_text" type="text" formControlName="logradouro">
+        </div>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Numero </p>
+            </div>
+            <input class="i_text" type="text" formControlName="numero">
+        </div>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Bairro</p>
+            </div>
+            <input class="i_text" type="text" formControlName="bairro">
+        </div>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Cidade</p>
+            </div>
+            <input class="i_text" type="text" formControlName="cidade">
+        </div>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Complemento</p>
+            </div>
+            <input class="i_text" type="text" formControlName="complemento">
+        </div>
+    </form>
+    <div class="fim_pagina">
+        <table>
+            <tr>
+                <td>
+                    <div>
+                        <a class="button" (click)="cadastrar()">Cadastrar</a>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <a class="button" (click)="limpar()">limpar</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
     </div>
-    <div class="i_preencher">
-      <div class="p_formulario">
-          <p class="p_form">Complemento</p>
-      </div>
-      <input class="i_text" type="text" formControlName="complemento">
-  </div>
-  </form>
-  <div class="fim_pagina">
-    <table>
-        <tr>
-            <td>
-                <div>
-                    <a class="button" (click)="cadastrar()">Cadastrar</a>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <a class="button" (click)="limpar()">limpar</a>
-                </div>
-            </td>
-        </tr>
-    </table>
-</div>
 </p-card>

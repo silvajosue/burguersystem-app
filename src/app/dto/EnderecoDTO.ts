@@ -1,6 +1,8 @@
-export class Endereco{
+import { ClienteDTO } from "./ClienteDTO";
+
+export class EnderecoDTO{
     public id: Number;
-    public codCliente: Number;
+    public cliente: ClienteDTO;
     public logradouro: String;
     public numero: Number;
     public bairro: String;
