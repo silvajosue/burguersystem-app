@@ -40,7 +40,7 @@ const routes: Routes = [
     loadChildren: () => ReceitaModule
   },
   {
-    path:'cadpedido',
+    path:'pedido',
     loadChildren: () => PedidoModule
   },
   {

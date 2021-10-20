@@ -45,6 +45,11 @@ export class AppComponent implements OnInit {
         icon: 'pi pi-fw pi-plus',
         routerLink: 'cadreceita'
       },
+      {
+        label: 'Pedido',
+        icon: 'pi pi-fw pi-plus',
+        routerLink: 'pedido'
+      },
     ]
 
     setTimeout(() => {
