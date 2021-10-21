@@ -4,78 +4,90 @@
     <form >
         <div class="i_preencher">
             <div class="p_formulario">
-                <p class="p_form">Categoria</p>
+                <p class="p_form">Nome do Cliente</p>
             </div>
-            <select formControlName="categoria">
-                <option value="lanche">Lanche</option>
-                <option value="acompanhamento">Acompanhamento</option>
-                <option value="sobremesa">Sobremesa</option>
+            <select formControlName="nomecliente">
+                <option value="01">Deivid Amorin</option>
+                <option value="02">Émerson Junior</option>
+                <option value="03">Erick Natal</option>
+                <option value="03">Josue Silva</option>
             </select>
+            <div class="p_formulario">
+                <a class="button" (click)="cadastrar()">Cadastrar</a>
+            </div>
         </div>
         <div class="i_preencher">
           <div class="p_formulario">
-              <p class="p_form">Nome</p>
+              <p class="p_form">Mesa</p>
           </div>
-          <input class="i_text" type="text" formControlName="nome">
+          <select formControlName="mesa">
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="03">04</option>
+        </select>
       </div>
-        <div class="i_preencher">
-            <div class="p_formulario">
-                <p class="p_form">Preco</p>
-            </div>
-            <input class="i_text" type="text" formControlName="preco">
+      <h1 class="titulo">Itens do Pedido</h1>
+      <div class="i_preencher">
+        <div class="p_formulario">
+            <p class="p_form">Categoria</p>
         </div>
-        <div class="i_preencher">
-            <div class="p_formulario">
-                <p class="p_form">Foto </p>
-            </div>
-            <input class="i_text" type="text" formControlName="foto">
+        <select formControlName="categoria">
+            <option value="lanche">Lanche</option>
+            <option value="acompanhamento">Acompanhamento</option>
+            <option value="sobremesa">Sobremesa</option>
+        </select>
+    </div>
+    <div class="i_preencher">
+        <div class="p_formulario">
+            <p class="p_form">Bsucar Produto</p>
         </div>
-
-        <h1 class="titulo">Ingredientes</h1>
-        <div class="i_preencher">
-            <div class="p_formulario">
-                <p class="p_form">Ingrediente</p>
-            </div>
-            <select formControlName="ingrediente">
-                <option value="pao_gergilim">Pão com gergelim</option>
-                <option value="pao_fio">Pão de fio</option>
-                <option value="H_carne">hambúrguer de carne</option>
-                <option value="H_picanha">hambúrguer de picanha</option>
-                <option value="H_frango">hambúrguer de frango</option>
-                <option value="tomate">Tomate</option>
-                <option value="alface">Alface</option>
-                <option value="bacon">Bacon</option>
-                <option value="catchup">Catchup</option>
-                <option value="maionese">Maionese</option>
-            </select>
-            <div class="p_formulario">
-                <p class="p_form">Quantidade</p>
-            </div>
-            <input class="i_text" type="text" formControlName="quantidade">
-            <div class="p_formulario">
-                <p class="p_form">Unidade de Medida</p>
-            </div>
-            <select formControlName="medida">
-                <option value="KG">KG</option>
-                <option value="Lt">Lt</option>
-                <option value="Un">Unidade</option>
-                <option value="ML">Ml</option>
-                <option value="Gr">Gr</option>
-            </select>
+        <select formControlName="produto">
+            <option value="xtudocarne">X-Tudo Carne</option>
+            <option value="xtudofrango">X-Tudo Frango</option>
+            <option value="xsalada">X-Salada</option>
+        </select>
+    </div>
+    <div class="i_preencher">
+        <div class="p_formulario">
+            <p class="p_form">Quantidade</p>
         </div>
-        
-        <div class="fim_pagina">
-            <table>
-                <tr>
-                    <td>
-                        <div>
-                            <a class="button" >+</a>
-                        </div>
-                    </td>
-                </tr>
-            </table>
+        <input class="i_text" type="text" formControlName="quantidade">
+    </div>
+    <div class="i_preencher">
+        <div class="p_formulario">
+            <p class="p_form">Ingredientes</p>
         </div>
-    </form>
+        <p class="p_form">Espaço para informar todos os ingredientes do produto selecionado</p>
+    </div>
+    <div class="i_preencher">
+        <div class="p_formulario">
+            <p class="p_form">Valor</p>
+        </div>
+        <p class="p_form">Espaço para informar o valor individual do produto selecionado</p>
+    </div>
+    <div class="i_preencher">
+        <div class="p_formulario">
+            <p class="p_form">Observações</p>
+        </div>
+        <input class="i_text" type="text" formControlName="observacao">
+    </div>
+    <div class="fim_pagina">
+        <table>
+            <tr>
+                <td>
+                    <div>
+                      <a class="button" >Adicionar</a>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <a class="button" >limpar</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
     <div class="fim_pagina">
       <table>
           <tr>
