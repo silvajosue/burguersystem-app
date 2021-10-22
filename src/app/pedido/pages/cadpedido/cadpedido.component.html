@@ -16,15 +16,24 @@
         </div>
         <div class="i_preencher">
           <div class="p_formulario">
-              <p class="p_form">Mesa</p>
+              <p class="p_form">Delivery</p>
           </div>
-          <select formControlName="mesa">
-            <option value="01">01</option>
-            <option value="02">02</option>
-            <option value="03">03</option>
-            <option value="03">04</option>
-        </select>
-      </div>
+            <input type="checkbox" formControlName="deliverytrue">
+            <input class="i_text" type="text" formControlName="endereço">
+        </div>
+            
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Mesa</p>
+            </div>
+              <input type="checkbox" formControlName="mesatrue">
+            <select formControlName="mesa">
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="03">04</option>
+              </select>
+          </div>
       <h1 class="titulo">Itens do Pedido</h1>
       <div class="i_preencher">
         <div class="p_formulario">
