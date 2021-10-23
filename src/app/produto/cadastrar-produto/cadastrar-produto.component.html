@@ -27,7 +27,7 @@
             <p-dropdown [options]="categorias" formControlName="categoria" optionLabel="nome" (click)="verificarOpcao()">
             </p-dropdown>
             <div *ngIf="outro">
-                <input placeholder="Digite o nome da categoria!">
+                <input placeholder="Digite o nome da categoria!" formControlName="novaCategoria">
             </div>
         </div>
         <div class="i_preencher">

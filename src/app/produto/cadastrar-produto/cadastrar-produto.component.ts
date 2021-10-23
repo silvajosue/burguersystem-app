@@ -17,6 +17,7 @@ export class CadastrarProdutoComponent implements OnInit {
   formulario: FormGroup;
   public outro: Boolean = false;
   public categorias: CategoriaDTO[];
+  public categoria: CategoriaDTO = null;
 
   constructor(private formBuilder: FormBuilder, private service: ProdutoService) { }
 
@@ -53,6 +54,7 @@ export class CadastrarProdutoComponent implements OnInit {
       preco: [],
       quantidade: [],
       foto: [],
+      novaCategoria: [],
     });
   }
 
@@ -62,29 +64,41 @@ export class CadastrarProdutoComponent implements OnInit {
 
     if(this.outro){
       let categoria = this.formulario.get('categoria').value;
+      categoria.id = null;
+      categoria.nome = this.formulario.get('novaCategoria').value;
       this.service.postCategoria(categoria, this.usuario).subscribe(
         sucesso => {
-
+          console.log(sucesso);
+          this.categoria = sucesso;
+          console.log(this.categoria)
+          this.cadastrarProduto();
         },
         erro => {
-
+          alert(erro);
         }
       )
+    } else {
+      this.cadastrarProduto();
     }
+
+  }
+
+  cadastrarProduto(){
+    
     this.produto = new ProdutoDTO();
     console.log(String(this.formulario.get('nome').value))
     this.produto.nome = String(this.formulario.get('nome').value);
     this.produto.preco = Number(this.formulario.get('preco').value);
-    this.produto.codCategoria = Number(this.formulario.get('categoria').value);
+    this.produto.categoria = this.categoria == null ? this.formulario.get('categoria').value : this.categoria;
     this.produto.foto = String(this.formulario.get('foto').value);
     this.produto.quantidade = Number(this.formulario.get('quantidade').value);
 
     console.log(this.produto)
 
-
     this.service.postProduto(this.produto, this.usuario).subscribe(
       (sucesso) => {
-        alert(sucesso)
+        alert(sucesso);
+        this.limpar();
       }, 
       (erro) => {
         alert(erro)
