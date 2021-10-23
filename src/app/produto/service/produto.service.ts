@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { CategoriaDTO } from 'src/app/dto/CategoriaDTO';
 import { UsuarioDTO } from 'src/app/login/model/UsuarioDTO';
 import { BaseService } from 'src/app/shared/service/BaseService';
 import { ProdutoDTO } from '../model/ProdutoDTO';
@@ -20,5 +21,15 @@ export class ProdutoService extends BaseService {
     let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
     return this.http.post<any>(this.urlBase + this.rota + '/cadastrarProduto', produto, this.criaHeader(token));
   }
+
+  public getCategorias(usuarioSessao: UsuarioDTO): Observable<any>{
+    let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
+    return this.http.get<any>(this.urlBase + 'api/categoria', this.criaHeader(token));
+  }
   
+  public postCategoria(categoria: CategoriaDTO, usuarioSessao: UsuarioDTO): Observable<any>{
+    let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
+    return this.http.post<any>(this.urlBase + 'api/categoria' + '/cadastrarCategoria', categoria, this.criaHeader(token));
+  }
+
 }

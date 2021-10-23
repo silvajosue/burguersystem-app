@@ -7,13 +7,10 @@ import { ButtonModule } from 'primeng-lts/button';
 import { CardModule } from 'primeng-lts/card';
 import { FieldsetModule } from 'primeng-lts/fieldset';
 import { InputTextModule } from 'primeng-lts/inputtext';
-import { MaterialRoutingModule } from '../material/material-routing.module';
+import { DropdownModule } from 'primeng-lts/dropdown';
 import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
 import { ProdutoRoutingModule } from './produto-routing.module';
 import { ProdutoService } from './service/produto.service';
-
-
-
 
 @NgModule({
   declarations: [CadastrarProdutoComponent],
@@ -28,6 +25,7 @@ import { ProdutoService } from './service/produto.service';
     InputTextModule,
     ReactiveFormsModule,
     ButtonModule,
+    DropdownModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [ProdutoRoutingModule, ProdutoService]
