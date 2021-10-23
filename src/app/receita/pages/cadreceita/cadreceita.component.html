@@ -6,7 +6,7 @@
             <div class="p_formulario">
                 <p class="p_form">Categoria</p>
             </div>
-            <select formControlName="categoria">
+            <select formControlName="codCategoria">
                 <option value="lanche">Lanche</option>
                 <option value="acompanhamento">Acompanhamento</option>
                 <option value="sobremesa">Sobremesa</option>
@@ -36,17 +36,17 @@
             <div class="p_formulario">
                 <p class="p_form">Ingrediente</p>
             </div>
-            <select formControlName="ingrediente">
-                <option value="pao_gergilim">Pão com gergelim</option>
-                <option value="pao_fio">Pão de fio</option>
-                <option value="H_carne">hambúrguer de carne</option>
-                <option value="H_picanha">hambúrguer de picanha</option>
-                <option value="H_frango">hambúrguer de frango</option>
-                <option value="tomate">Tomate</option>
-                <option value="alface">Alface</option>
-                <option value="bacon">Bacon</option>
-                <option value="catchup">Catchup</option>
-                <option value="maionese">Maionese</option>
+            <select formControlName="codMaterial">
+                <option value="1">Pão com gergelim</option>
+                <option value="2">Pão de fio</option>
+                <option value="3">hambúrguer de carne</option>
+                <option value="4">hambúrguer de picanha</option>
+                <option value="5">hambúrguer de frango</option>
+                <option value="6">Tomate</option>
+                <option value="7">Alface</option>
+                <option value="8">Bacon</option>
+                <option value="9">Catchup</option>
+                <option value="10">Maionese</option>
             </select>
             <div class="p_formulario">
                 <p class="p_form">Quantidade</p>
@@ -69,7 +69,7 @@
                 <tr>
                     <td>
                         <div>
-                            <a class="button" >+</a>
+                            <a class="button" (click)="inserir()" >+</a>
                         </div>
                     </td>
                 </tr>
