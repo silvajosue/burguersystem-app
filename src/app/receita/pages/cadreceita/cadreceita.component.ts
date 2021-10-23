@@ -4,6 +4,7 @@ import { ReceitaDTO } from 'src/app/dto/ReceitaDTO';
 import { ProdutoDTO } from 'src/app/produto/model/ProdutoDTO';
 import { ComposicaoDTO } from 'src/app/dto/ComposicaoDTO';
 import { UsuarioDTO } from 'src/app/login/model/UsuarioDTO';
+import { CategoriaDTO } from 'src/app/dto/CategoriaDTO';
 
 @Component({
   selector: 'app-cadreceita',
@@ -47,7 +48,7 @@ export class CadreceitaComponent implements OnInit {
   public cadastrar(): void {
     this.receita = new ProdutoDTO();
     console.log(String(this.formulario.get('nome').value))
-    this.receita.codCategoria = Number(this.formulario.get('codCategoria').value);
+    this.receita.codCategoria = new (this.formulario.get('codCategoria').value);
     console.log(this.formulario.get('codCategoria').value);
     this.receita.nome = String(this.formulario.get('nome').value);
     this.receita.preco = Number(this.formulario.get('preco').value);
