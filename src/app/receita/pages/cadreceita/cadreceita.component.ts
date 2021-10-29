@@ -35,7 +35,7 @@ export class CadreceitaComponent implements OnInit {
 
   public createForm(): void {
     this.formulario = this.formBuilder.group({
-      codCategoria: [],
+      categoria: [],
       nome: [],
       preco: [],
       foto: [],
@@ -48,12 +48,14 @@ export class CadreceitaComponent implements OnInit {
   public cadastrar(): void {
     this.receita = new ProdutoDTO();
     console.log(String(this.formulario.get('nome').value))
-    this.receita.codCategoria = new (this.formulario.get('codCategoria').value);
-    console.log(this.formulario.get('codCategoria').value);
+    this.receita.categoria = new CategoriaDTO().id = this.formulario.get('categoria').value;
+    console.log(this.formulario.get('categoria').value);
     this.receita.nome = String(this.formulario.get('nome').value);
     this.receita.preco = Number(this.formulario.get('preco').value);
     this.receita.foto = String(this.formulario.get('foto').value);
 
+    console.log(this.receita);
+    console.log(this.composicoes)
     alert("ok");
   }
 
@@ -64,6 +66,10 @@ export class CadreceitaComponent implements OnInit {
     this.composicao.quantidade = Number(this.formulario.get('quantidade').value);
     this.composicao.medida = String(this.formulario.get('medida').value);
     console.log(this.formulario.get('codMaterial').value);
+
+    this.formulario.get('codMaterial').setValue('');
+    this.formulario.get('quantidade').setValue('');
+    this.formulario.get('medida').setValue('');
 
     this.composicoes.push(this.composicao);
     console.log(this.composicoes);
