@@ -19,19 +19,14 @@ export class CadreceitaComponent implements OnInit {
   formulario: FormGroup;
   
   composicoes = [];
-
-  /*public composicao: {
-    ingrediente: string,
-    quantidade: number,
-    medida: string
-  };*/
-
   
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.createForm();
   }
+
+  divs: any[] = [];
 
   public createForm(): void {
     this.formulario = this.formBuilder.group({
@@ -74,6 +69,18 @@ export class CadreceitaComponent implements OnInit {
     this.composicoes.push(this.composicao);
     console.log(this.composicoes);
     alert("Componente cadastrado!");
+
+    // this.divs.push('<div class="i_preencher"><div class="p_formulario"><p class="p_form"> aaaaaa </p></div><a class="button">X</a></div>');
+    this.divs.push({
+      "id": this.composicoes.length-1,
+      "nome": this.composicao.codMaterial,
+      "quantidade": this.composicao.quantidade,
+      "medida": this.composicao.medida   
+    });
+  }
+
+  public retirar(): void {
+      
   }
 
   public limpar(): void {
