@@ -76,7 +76,7 @@
         </div>
         <div>
             <div *ngFor = "let div of divs">
-                <div class="i_preencher" id="{{div.id}}">
+                <div class="i_preencher">
                     <div class="p_formulario">
                     </div>
                     <div class="p_formulario">
@@ -88,7 +88,7 @@
                     <div class="p_formulario">
                         <p class="p_form">{{div.medida}}</p>
                     </div>
-                    <a class="button"  (click)="retirar()" >X</a>
+                    <a class="button" id="{{div.id}}" (click)="retirar(div.id)">X</a>
                 </div>                
             </div>
         </div>

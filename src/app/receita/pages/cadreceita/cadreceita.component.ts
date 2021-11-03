@@ -79,8 +79,13 @@ export class CadreceitaComponent implements OnInit {
     });
   }
 
-  public retirar(): void {
-      
+  public retirar(id): void {
+      var d;
+      this.divs.forEach((e,i) => {
+        if(e.id == id) 
+          d = i;
+      });
+      this.divs.splice(d,1)
   }
 
   public limpar(): void {
