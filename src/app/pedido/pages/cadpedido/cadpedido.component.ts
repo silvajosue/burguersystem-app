@@ -14,15 +14,15 @@ export class CadpedidoComponent implements OnInit {
   //constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.createForm();
+    //this.createForm();
   }
-  public createForm(): void {
-      this.formulario = this.formBuilder.group({
-      cliente: [],
-      mesa: [],
-      //preco_total: [],
-    });
-  }
+  // public createForm(): void {
+  //     this.formulario = this.formBuilder.group({
+  //     cliente: [],
+  //     mesa: [],
+  //     //preco_total: [],
+  //   });
+  // }
 
   
   public cadastrar(): void {
