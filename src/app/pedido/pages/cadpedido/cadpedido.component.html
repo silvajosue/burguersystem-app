@@ -1,12 +1,12 @@
 <p-card class="card-style">
     <a class="button" href="#">Voltar</a>
     <h1 class="titulo">Cadastro de Pedido</h1>
-    <form >
+    <form [formGroup]="formulario">
         <div class="i_preencher">
             <div class="p_formulario">
                 <p class="p_form">Nome do Cliente</p>
             </div>
-            <select formControlName="nomecliente">
+            <select formControlName="cliente">
                 <option value="01">Deivid Amorin</option>
                 <option value="02">Émerson Junior</option>
                 <option value="03">Erick Natal</option>
@@ -14,19 +14,11 @@
             </select>
                 <a class="button">Cadastrar</a>
         </div>
-        <div class="i_preencher">
-          <div class="p_formulario">
-              <p class="p_form">Delivery</p>
-          </div>
-            <input type="checkbox" formControlName="deliverytrue">
-            <input class="i_text" type="text" formControlName="endereço">
-        </div>
             
         <div class="i_preencher">
             <div class="p_formulario">
                 <p class="p_form">Mesa</p>
             </div>
-              <input type="checkbox" formControlName="mesatrue">
             <select formControlName="mesa">
               <option value="01">01</option>
               <option value="02">02</option>
@@ -130,7 +122,7 @@
           <tr>
               <td>
                   <div>
-                    <a class="button">Fechar Pedido</a>
+                    <a class="button" (click)="cadastrar()">Fechar Pedido</a>
                   </div>
               </td>
               <td>
