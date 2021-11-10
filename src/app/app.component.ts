@@ -43,19 +43,40 @@ export class AppComponent implements OnInit {
       {
         label: 'Receita',
         icon: 'pi pi-fw pi-plus',
-        routerLink: 'cadreceita'
+        items: [
+          { label: 'Cadastrar', routerLink: 'cadreceita/' },
+          { label: 'Consultar', routerLink: 'cadreceita/consulta' },
+        ]
       },
       {
         label: 'Pedido',
         icon: 'pi pi-fw pi-plus',
-        routerLink: 'pedido'
+        items: [
+          { label: 'Cadastrar', routerLink: 'pedido/' },
+          { label: 'Consultar', routerLink: 'pedido/consultar' },
+        ]
       },
+      {
+        label: 'Cozinha',
+        icon: 'pi pi-fw pi-plus',
+        routerLink: 'cozinha'
+      },
+      {
+        label: 'Atendimento',
+        icon: 'pi pi-fw pi-plus',
+        routerLink: 'atendimento'
+      },
+      {
+        label: 'Gerente',
+        icon: 'pi pi-fw pi-plus',
+        routerLink: 'gerente'
+      }
     ]
 
     setTimeout(() => {
       let usuario: UsuarioDTO = JSON.parse(sessionStorage.getItem("usuarioSessao"));
       let dataModifica = new Date(document.lastModified);
-      if(moment(usuario.tempoSessao).isAfter(dataModifica) ){
+      if (moment(usuario.tempoSessao).isAfter(dataModifica)) {
         sessionStorage.clear();
       }
     }, 960000);

@@ -16,53 +16,65 @@ import { ConsultafuncionarioModule } from './funcionario/consultafuncionario/con
 
 const routes: Routes = [
   {
-    path:'login',
+    path: 'login',
     loadChildren: () => LoginModule
   },
   {
-    path:'material',
+    path: 'material',
     loadChildren: () => MaterialModule
   },
   {
-    path:'produto',
+    path: 'produto',
     loadChildren: () => ProdutoModule
   },
   {
-    path:'cadcliente',
+    path: 'cadcliente',
     loadChildren: () => ClienteModule
   },
   {
-    path:'cadfuncionario',
+    path: 'cadfuncionario',
     loadChildren: () => FuncionarioModule
   },
   {
-    path:'cadreceita',
+    path: 'cadreceita',
     loadChildren: () => ReceitaModule
   },
   {
-    path:'pedido',
+    path: 'pedido',
     loadChildren: () => PedidoModule
   },
   {
-    path:'homecozinheiro',
+    path: 'homecozinheiro',
     loadChildren: () => HomecozinheiroModule
   },
   {
-    path:'homegerente',
+    path: 'homegerente',
     loadChildren: () => HomegerenteModule
   },
   {
-    path:'homeatendente',
+    path: 'homeatendente',
     loadChildren: () => HomeatendenteModule
   },
   {
-    path:'consultaestoque',
+    path: 'consultaestoque',
     loadChildren: () => ConsultaestoqueModule
   },
   {
-    path:'consultafuncionario',
+    path: 'consultafuncionario',
     loadChildren: () => ConsultafuncionarioModule
   },
+  {
+    path: 'cozinha',
+    loadChildren: () => HomecozinheiroModule
+  },
+  {
+    path: 'atendimento',
+    loadChildren: () => HomeatendenteModule
+  },
+  {
+    path: 'gerente',
+    loadChildren: () => HomegerenteModule
+  }
 
 ];
 
