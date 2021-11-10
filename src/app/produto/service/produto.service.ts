@@ -17,19 +17,24 @@ export class ProdutoService extends BaseService {
     super();
   }
 
-  public postProduto(produto: ProdutoDTO, usuarioSessao: UsuarioDTO): Observable<any>{
+  public postProduto(produto: ProdutoDTO, usuarioSessao: UsuarioDTO): Observable<any> {
     let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
     return this.http.post<any>(this.urlBase + this.rota + '/cadastrarProduto', produto, this.criaHeader(token));
   }
 
-  public getCategorias(usuarioSessao: UsuarioDTO): Observable<any>{
+  public getCategorias(usuarioSessao: UsuarioDTO): Observable<any> {
     let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
     return this.http.get<any>(this.urlBase + 'api/categoria', this.criaHeader(token));
   }
-  
-  public postCategoria(categoria: CategoriaDTO, usuarioSessao: UsuarioDTO): Observable<any>{
+
+  public postCategoria(categoria: CategoriaDTO, usuarioSessao: UsuarioDTO): Observable<any> {
     let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
     return this.http.post<any>(this.urlBase + 'api/categoria' + '/cadastrarCategoria', categoria, this.criaHeader(token));
+  }
+
+  public getProdutos(usuarioSessao: UsuarioDTO): Observable<ProdutoDTO[]> {
+    let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
+    return this.http.get<ProdutoDTO[]>(this.urlBase + 'api/produto', this.criaHeader(token));
   }
 
 }

@@ -5,6 +5,9 @@ import { ProdutoDTO } from 'src/app/produto/model/ProdutoDTO';
 import { ComposicaoDTO } from 'src/app/dto/ComposicaoDTO';
 import { UsuarioDTO } from 'src/app/login/model/UsuarioDTO';
 import { CategoriaDTO } from 'src/app/dto/CategoriaDTO';
+import { ProdutoService } from 'src/app/produto/service/produto.service';
+import { ReceitaService } from '../../service/receita.service';
+import { MaterialDTO } from 'src/app/dto/MaterialDTO';
 
 @Component({
   selector: 'app-cadreceita',
@@ -13,50 +16,84 @@ import { CategoriaDTO } from 'src/app/dto/CategoriaDTO';
 })
 export class CadreceitaComponent implements OnInit {
 
-  public receita: ProdutoDTO;
+  public receita: ComposicaoDTO;
   public composicao: ComposicaoDTO;
   private usuario: UsuarioDTO;
   formulario: FormGroup;
   
   composicoes = [];
+  produtos: ProdutoDTO[];
+  materiais: MaterialDTO[];
   
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private produtoService: ProdutoService, private service: ReceitaService) { }
 
   ngOnInit(): void {
     this.createForm();
+    this.carregaProdutos();
+    this.carregaMaterial();
   }
 
   divs: any[] = [];
 
   public createForm(): void {
     this.formulario = this.formBuilder.group({
-      categoria: [],
+      produto: [],
       nome: [],
       preco: [],
       foto: [],
-      codMaterial: [],
+      material: [],
       quantidade: [],
       medida: [],  
     });
   }
 
-  public cadastrar(): void {
-    this.receita = new ProdutoDTO();
-    console.log(String(this.formulario.get('nome').value))
-    this.receita.categoria = new CategoriaDTO().id = this.formulario.get('categoria').value;
-    console.log(this.formulario.get('categoria').value);
-    this.receita.nome = String(this.formulario.get('nome').value);
-    this.receita.preco = Number(this.formulario.get('preco').value);
-    this.receita.foto = String(this.formulario.get('foto').value);
+  carregaMaterial() {
+    this.usuario = JSON.parse(sessionStorage.getItem("usuarioSessao"));
+    this.service.getMateriais(this.usuario).subscribe(
+      sucesso => {
+        this.materiais = sucesso;
+        console.log(this.materiais);
+        this.usuario = null;
+      },
+      erro => {
+        console.log(erro)
+        alert(erro);
+      }
+    );
+  }
 
-    console.log(this.receita);
+  carregaProdutos() {
+    this.usuario = JSON.parse(sessionStorage.getItem("usuarioSessao"));
+    this.produtoService.getProdutos(this.usuario).subscribe(
+      sucesso => {
+        this.produtos = sucesso;
+        console.log(this.produtos);
+        this.usuario = null;
+      },
+      erro => {
+        console.log(erro)
+        alert(erro);
+      }
+    );
+  }
+
+  public cadastrar(): void {
+    console.log(String(this.formulario.get('nome').value))
+    this.composicao.produto =this.formulario.get('produto').value;
+    console.log(this.formulario.get('categoria').value);
+    this.composicao.nome = String(this.formulario.get('nome').value);
+    this.composicao.foto = String(this.formulario.get('nome').value);
+    this.composicao.materiais = this.materiais
+    this.composicao.quantidade = this.formulario.get('quantidade').value;
+
+    console.log(this.composicao);
     console.log(this.composicoes)
     alert("ok");
   }
 
   public inserir(): void {
     this.composicao = new ComposicaoDTO();
-    this.composicao.codMaterial = Number(this.formulario.get('codMaterial').value);
+    // this.composicao.material = (this.formulario.get('codMaterial').value);
     console.log(this.formulario.get('codMaterial').value);
     this.composicao.quantidade = Number(this.formulario.get('quantidade').value);
     this.composicao.medida = String(this.formulario.get('medida').value);
@@ -73,7 +110,7 @@ export class CadreceitaComponent implements OnInit {
     // this.divs.push('<div class="i_preencher"><div class="p_formulario"><p class="p_form"> aaaaaa </p></div><a class="button">X</a></div>');
     this.divs.push({
       "id": this.composicoes.length-1,
-      "nome": this.composicao.codMaterial,
+      "nome": this.composicao.materiais,
       "quantidade": this.composicao.quantidade,
       "medida": this.composicao.medida   
     });
@@ -90,7 +127,6 @@ export class CadreceitaComponent implements OnInit {
 
   public limpar(): void {
     this.formulario.reset();
-    alert("Ok");
   }
 
 }

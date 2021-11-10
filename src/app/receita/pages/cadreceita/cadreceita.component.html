@@ -6,11 +6,8 @@
             <div class="p_formulario">
                 <p class="p_form">Categoria</p>
             </div>
-            <select formControlName="categoria">
-                <option value="lanche">Lanche</option>
-                <option value="acompanhamento">Acompanhamento</option>
-                <option value="sobremesa">Sobremesa</option>
-            </select>
+            <p-dropdown formControlName="produto" [options]="produtos" >
+            </p-dropdown>
         </div>
         <div class="i_preencher">
           <div class="p_formulario">
@@ -18,12 +15,12 @@
           </div>
           <input class="i_text" type="text" formControlName="nome">
       </div>
-        <div class="i_preencher">
+        <!-- <div class="i_preencher">
             <div class="p_formulario">
                 <p class="p_form">Preco</p>
             </div>
             <input class="i_text" type="text" formControlName="preco">
-        </div>
+        </div> -->
         <div class="i_preencher">
             <div class="p_formulario">
                 <p class="p_form">Foto </p>
@@ -36,18 +33,8 @@
             <div class="p_formulario">
                 <p class="p_form">Ingrediente</p>
             </div>
-            <select formControlName="codMaterial">
-                <option value="1">Pão com gergelim</option>
-                <option value="2">Pão de fio</option>
-                <option value="3">hambúrguer de carne</option>
-                <option value="4">hambúrguer de picanha</option>
-                <option value="5">hambúrguer de frango</option>
-                <option value="6">Tomate</option>
-                <option value="7">Alface</option>
-                <option value="8">Bacon</option>
-                <option value="9">Catchup</option>
-                <option value="10">Maionese</option>
-            </select>
+            <p-dropdown formControlName="material" [options]="materiais" >
+            </p-dropdown>
             <div class="p_formulario">
                 <p class="p_form">Quantidade</p>
             </div>
