@@ -23,12 +23,18 @@ export class AppComponent implements OnInit {
       {
         label: 'Material',
         icon: 'pi pi-fw pi-plus',
-        routerLink: 'material'
+        items: [
+          { label: 'Cadastrar', routerLink: 'material/' },
+          { label: 'Consultar', routerLink: 'material/consulta' },
+        ]
       },
       {
         label: 'Produto',
         icon: 'pi pi-fw pi-plus',
-        routerLink: 'produto'
+        items: [
+          { label: 'Cadastrar', routerLink: 'produto/' },
+          { label: 'Consultar', routerLink: 'produto/consulta' },
+        ]
       },
       {
         label: 'Cliente',
@@ -38,7 +44,10 @@ export class AppComponent implements OnInit {
       {
         label: 'Funcionario',
         icon: 'pi pi-fw pi-plus',
-        routerLink: 'cadfuncionario'
+        items: [
+          { label: 'Cadastrar', routerLink: 'cadfuncionario/' },
+          { label: 'Consultar', routerLink: 'cadfuncionario/consulta' },
+        ]
       },
       {
         label: 'Receita',
