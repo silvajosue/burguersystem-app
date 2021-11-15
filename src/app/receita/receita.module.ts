@@ -10,6 +10,7 @@ import { InputTextModule } from 'primeng-lts/inputtext';
 import { ButtonModule } from 'primeng-lts/button';
 import { CadreceitaComponent } from './pages/cadreceita/cadreceita.component';
 import { ConsultareceitaComponent } from './pages/consultareceita/consultareceita.component';
+import { DropdownModule } from 'primeng-lts/dropdown';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ConsultareceitaComponent } from './pages/consultareceita/consultareceit
     InputTextModule,
     ReactiveFormsModule,
     ButtonModule,
-    ReceitaRoutingModule
+    ReceitaRoutingModule,
+    DropdownModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [ReceitaRoutingModule]

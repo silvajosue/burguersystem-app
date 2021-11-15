@@ -28,9 +28,9 @@ export class CadreceitaComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private produtoService: ProdutoService, private service: ReceitaService) { }
 
   ngOnInit(): void {
-    this.createForm();
-    this.carregaProdutos();
     this.carregaMaterial();
+    this.carregaProdutos();
+    this.createForm();
   }
 
   divs: any[] = [];
@@ -79,16 +79,26 @@ export class CadreceitaComponent implements OnInit {
 
   public cadastrar(): void {
     console.log(String(this.formulario.get('nome').value))
-    this.composicao.produto =this.formulario.get('produto').value;
+    this.composicao.produto = this.formulario.get('produto').value;
     console.log(this.formulario.get('categoria').value);
     this.composicao.nome = String(this.formulario.get('nome').value);
     this.composicao.foto = String(this.formulario.get('nome').value);
     this.composicao.materiais = this.materiais
     this.composicao.quantidade = this.formulario.get('quantidade').value;
-
     console.log(this.composicao);
     console.log(this.composicoes)
-    alert("ok");
+
+    this.usuario = JSON.parse(sessionStorage.getItem("usuarioSessao"));
+
+    this.service.postComposicao(this.composicao, this.usuario).subscribe(
+      sucesso => {
+        alert("Cadastro realizado com sucesso!! " + sucesso)
+      },
+      erro => {
+        alert("Erro" + erro);
+        console.log(erro);
+      }
+    )
   }
 
   public inserir(): void {

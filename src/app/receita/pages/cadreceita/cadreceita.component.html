@@ -6,7 +6,7 @@
             <div class="p_formulario">
                 <p class="p_form">Categoria</p>
             </div>
-            <p-dropdown formControlName="produto" [options]="produtos" >
+            <p-dropdown formControlName="produto" [options]="produtos" optionLabel="nome">
             </p-dropdown>
         </div>
         <div class="i_preencher">
@@ -33,7 +33,7 @@
             <div class="p_formulario">
                 <p class="p_form">Ingrediente</p>
             </div>
-            <p-dropdown formControlName="material" [options]="materiais" >
+            <p-dropdown formControlName="material" [options]="materiais" optionLabel="nome" >
             </p-dropdown>
             <div class="p_formulario">
                 <p class="p_form">Quantidade</p>
