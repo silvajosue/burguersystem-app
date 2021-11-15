@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ReceitaDTO } from 'src/app/dto/ReceitaDTO';
 import { ProdutoDTO } from 'src/app/produto/model/ProdutoDTO';
 import { ComposicaoDTO } from 'src/app/dto/ComposicaoDTO';
 import { UsuarioDTO } from 'src/app/login/model/UsuarioDTO';
-import { CategoriaDTO } from 'src/app/dto/CategoriaDTO';
 import { ProdutoService } from 'src/app/produto/service/produto.service';
 import { ReceitaService } from '../../service/receita.service';
 import { MaterialDTO } from 'src/app/dto/MaterialDTO';

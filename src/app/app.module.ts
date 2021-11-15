@@ -6,7 +6,6 @@ import { MenubarModule } from 'primeng-lts/menubar';
 import { MenuModule } from 'primeng/menu';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CadpedidoComponent } from './pedido/pages/cadpedido/cadpedido.component';
 import { HomecozinheiroComponent } from './home/homecozinheiro/homecozinheiro.component';
 import { HomegerenteComponent } from './home/homegerente/homegerente.component';
 import { HomeatendenteComponent } from './home/homeatendente/homeatendente.component';
@@ -17,7 +16,6 @@ import { ConsultafuncionarioComponent } from './funcionario/consultafuncionario/
 @NgModule({
   declarations: [
     AppComponent,
-    CadpedidoComponent,
     HomecozinheiroComponent,
     HomegerenteComponent,
     HomeatendenteComponent,

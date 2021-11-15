@@ -2,7 +2,8 @@
     <a class="button" href="#">Voltar</a>
     <h1 class="titulo">Cadastro de Pedido</h1>
     <!-- <form [formGroup]="formulario"> -->
-    <form>
+
+    <form [formGroup]="formulario">
         <div class="i_preencher">
             <div class="p_formulario">
                 <p class="p_form">Nome do Cliente</p>
@@ -13,125 +14,125 @@
                 <option value="03">Erick Natal</option>
                 <option value="03">Josue Silva</option>
             </select>
-                <a class="button">Cadastrar</a>
+            <a class="button">Cadastrar</a>
         </div>
-            
+
         <div class="i_preencher">
             <div class="p_formulario">
                 <p class="p_form">Mesa</p>
             </div>
             <select formControlName="mesa">
-              <option value="01">01</option>
-              <option value="02">02</option>
-              <option value="03">03</option>
-              <option value="03">04</option>
-              </select>
-          </div>
-      <h1 class="titulo">Itens do Pedido</h1>
-      <div class="i_preencher">
-        <div class="p_formulario">
-            <p class="p_form">Categoria</p>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="03">04</option>
+            </select>
         </div>
-        <select formControlName="categoria">
-            <option value="lanche">Lanche</option>
-            <option value="acompanhamento">Acompanhamento</option>
-            <option value="sobremesa">Sobremesa</option>
-        </select>
-    </div>
-    <div class="i_preencher">
-        <div class="p_formulario">
-            <p class="p_form">Bsucar Produto</p>
+        <h1 class="titulo">Itens do Pedido</h1>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Categoria</p>
+            </div>
+            <select formControlName="categoria">
+                <option value="lanche">Lanche</option>
+                <option value="acompanhamento">Acompanhamento</option>
+                <option value="sobremesa">Sobremesa</option>
+            </select>
         </div>
-        <select formControlName="produto">
-            <option value="xtudocarne">X-Tudo Carne</option>
-            <option value="xtudofrango">X-Tudo Frango</option>
-            <option value="xsalada">X-Salada</option>
-        </select>
-    </div>
-    <div class="i_preencher">
-        <div class="p_formulario">
-            <p class="p_form">Quantidade</p>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Bsucar Produto</p>
+            </div>
+            <select formControlName="produto">
+                <option value="xtudocarne">X-Tudo Carne</option>
+                <option value="xtudofrango">X-Tudo Frango</option>
+                <option value="xsalada">X-Salada</option>
+            </select>
         </div>
-        <input class="i_text" type="text" formControlName="quantidade">
-    </div>
-    <div class="i_preencher">
-        <div class="p_formulario">
-            <p class="p_form">Ingredientes</p>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Quantidade</p>
+            </div>
+            <input class="i_text" type="text" formControlName="quantidade">
         </div>
-        <p class="p_form">Espaço que o banco de dados trará os ingredientes do produto selecionado</p>
-    </div>
-    <div class="i_preencher">
-        <div class="p_formulario">
-            <p class="p_form">Valor</p>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Ingredientes</p>
+            </div>
+            <p class="p_form">Espaço que o banco de dados trará os ingredientes do produto selecionado</p>
         </div>
-        <p class="p_form">Espaço do valor individual do produto selecionado</p>
-    </div>
-    <div class="i_preencher">
-        <div class="p_formulario">
-            <p class="p_form">Observações</p>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Valor</p>
+            </div>
+            <p class="p_form">Espaço do valor individual do produto selecionado</p>
         </div>
-        <input class="i_text" type="text" formControlName="observacao">
-    </div>
-    <div class="fim_pagina">
-        <table>
-            <tr>
-                <td>
-                    <div>
-                      <a class="button" >Adicionar</a>
-                    </div>
-                </td>
-                <td>
-                    <div>
-                        <a class="button" >limpar</a>
-                    </div>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <hr>
-    <h1 class="titulo">Resumo do pedido</h1>
-    <div class="i_preencher">
-        <div class="p_formulario">
-            <p class="p_form"></p>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Observações</p>
+            </div>
+            <input class="i_text" type="text" formControlName="observacao">
         </div>
-        <p class="p_form">Primeiro Item</p>
-        <a class="button" >Excluir</a>
-    </div>
-    <div class="i_preencher">
-        <div class="p_formulario">
-            <p class="p_form"></p>
+        <div class="fim_pagina">
+            <table>
+                <tr>
+                    <td>
+                        <div>
+                            <a class="button">Adicionar</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <a class="button">limpar</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
-        <p class="p_form">Segundo Item</p>
-        <a class="button" >Excluir</a>
-    </div>
-    <div class="i_preencher">
-        <div class="p_formulario">
-            <p class="p_form"></p>
+        <hr>
+        <h1 class="titulo">Resumo do pedido</h1>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form"></p>
+            </div>
+            <p class="p_form">Primeiro Item</p>
+            <a class="button">Excluir</a>
         </div>
-        <p class="p_form">Terceiro Item</p>
-        <a class="button" >Excluir</a>
-    </div>
-    <div class="i_preencher">
-        <div class="p_formulario">
-            <p class="p_form">Valor Total</p>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form"></p>
+            </div>
+            <p class="p_form">Segundo Item</p>
+            <a class="button">Excluir</a>
         </div>
-        <p class="p_form">Espaço para informar valor total do pedido</p>
-    </div>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form"></p>
+            </div>
+            <p class="p_form">Terceiro Item</p>
+            <a class="button">Excluir</a>
+        </div>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Valor Total</p>
+            </div>
+            <p class="p_form">Espaço para informar valor total do pedido</p>
+        </div>
 
-    <div class="fim_pagina">
-      <table>
-          <tr>
-              <td>
-                  <div>
-                    <a class="button" (click)="cadastrar()">Fechar Pedido</a>
-                  </div>
-              </td>
-              <td>
-                  <div>
-                      <a class="button">limpar</a>
-                  </div>
-              </td>
-          </tr>
-      </table>
-  </div>
-  
+        <div class="fim_pagina">
+            <table>
+                <tr>
+                    <td>
+                        <div>
+                            <a class="button" (click)="cadastrar()">Fechar Pedido</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <a class="button">limpar</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>

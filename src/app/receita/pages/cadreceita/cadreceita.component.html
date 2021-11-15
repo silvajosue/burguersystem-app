@@ -10,11 +10,11 @@
             </p-dropdown>
         </div>
         <div class="i_preencher">
-          <div class="p_formulario">
-              <p class="p_form">Nome</p>
-          </div>
-          <input class="i_text" type="text" formControlName="nome">
-      </div>
+            <div class="p_formulario">
+                <p class="p_form">Nome</p>
+            </div>
+            <input class="i_text" type="text" formControlName="nome">
+        </div>
         <!-- <div class="i_preencher">
             <div class="p_formulario">
                 <p class="p_form">Preco</p>
@@ -33,7 +33,7 @@
             <div class="p_formulario">
                 <p class="p_form">Ingrediente</p>
             </div>
-            <p-dropdown formControlName="material" [options]="materiais" optionLabel="nome" >
+            <p-dropdown formControlName="material" [options]="materiais" optionLabel="nome">
             </p-dropdown>
             <div class="p_formulario">
                 <p class="p_form">Quantidade</p>
@@ -55,14 +55,14 @@
                 <tr>
                     <td>
                         <div>
-                            <a class="button" (click)="inserir()" >+</a>
+                            <a class="button" (click)="inserir()">+</a>
                         </div>
                     </td>
                 </tr>
             </table>
         </div>
         <div>
-            <div *ngFor = "let div of divs">
+            <div *ngFor="let div of divs">
                 <div class="i_preencher">
                     <div class="p_formulario">
                     </div>
@@ -76,25 +76,24 @@
                         <p class="p_form">{{div.medida}}</p>
                     </div>
                     <a class="button" id="{{div.id}}" (click)="retirar(div.id)">X</a>
-                </div>                
+                </div>
             </div>
         </div>
     </form>
     <div class="fim_pagina">
-      <table>
-          <tr>
-              <td>
-                  <div>
-                      <a class="button" (click)="cadastrar()">Cadastrar</a>
-                  </div>
-              </td>
-              <td>
-                  <div>
-                      <a class="button" (click)="limpar()">limpar</a>
-                  </div>
-              </td>
-          </tr>
-      </table>
-  </div>
-  </p-card>
-  
+        <table>
+            <tr>
+                <td>
+                    <div>
+                        <a class="button" (click)="cadastrar()">Cadastrar</a>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <a class="button" (click)="limpar()">limpar</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</p-card>
