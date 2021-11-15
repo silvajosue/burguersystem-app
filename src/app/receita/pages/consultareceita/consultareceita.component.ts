@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder,FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-consultareceita',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultareceitaComponent implements OnInit {
 
-  constructor() { }
+  formulario: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.createForm();
+  }
+
+  public createForm(): void {
+      this.formulario = this.formBuilder.group({
+      cliente: [],
+      mesa: [],
+      //preco_total: [],
+    });
   }
 
 }
