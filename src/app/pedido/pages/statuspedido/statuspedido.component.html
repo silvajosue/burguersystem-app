@@ -1,1 +1,52 @@
-<p>statuspedido works!</p>
+<p-card class="card-style">
+    <a class="button" href="#">Voltar</a>
+    <h1 class="titulo">Informações do pedido</h1>
+    <form [formGroup]="formulario">
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Cliente</p>
+            </div>
+            <input class="i_text" type="text" formControlName="nome">
+            <a class="button">Buscar</a>
+        </div>
+        <hr>
+
+        <h1 class="titulo">Resumo do pedido</h1>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Cliente: </p>
+            </div>
+            <p class="p_form">Nome do cliente</p>
+        </div>
+
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Hora do pedido: </p>
+            </div>
+            <p class="p_form">Hora do pedido</p>
+        </div>
+
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Itens: </p>
+            </div>
+            <p class="p_form">Lanche pedido; </p>
+            <p class="p_form">Lanche pedido; </p>
+            <p class="p_form">Lanche pedido; </p>
+            <p class="p_form">Lanche pedido; </p>
+        </div>
+
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Valor Total: </p>
+            </div>
+            <p class="p_form">R$ 90,00</p>
+        </div>
+
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Status do pedido: </p>
+            </div>
+            <p class="p_form">Em rota de entrega</p>
+        </div>
+        
