@@ -11,8 +11,6 @@ import { HomecozinheiroModule } from './home/homecozinheiro/homecozinheiro.modul
 import { HomegerenteModule } from './home/homegerente/homegerente.module';
 import { HomeatendenteModule } from './home/homeatendente/homeatendente.module';
 import { ConsultaestoqueModule } from './estoque/consultaestoque/consultaestoque.module';
-import { ConsultafuncionarioModule } from './funcionario/consultafuncionario/consultafuncionario.module';
-
 
 const routes: Routes = [
   {
@@ -58,10 +56,6 @@ const routes: Routes = [
   {
     path: 'consultaestoque',
     loadChildren: () => ConsultaestoqueModule
-  },
-  {
-    path: 'consultafuncionario',
-    loadChildren: () => ConsultafuncionarioModule
   },
   {
     path: 'cozinha',
