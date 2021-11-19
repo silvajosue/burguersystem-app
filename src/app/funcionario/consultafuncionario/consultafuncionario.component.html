@@ -1,1 +1,75 @@
-<p>consultafuncionario works!</p>
+<p-card class="card-style">
+    <a class="button" href="#">Voltar</a>
+    <h1 class="titulo">Consultar Funcionário</h1>
+    <form [formGroup]="formulario">
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Buscar Funcionário</p>
+            </div>
+            <input class="i_text" type="text" formControlName="nome">
+            <a class="button">Buscar</a>
+        </div>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Foto</p>
+            </div>
+            <img src="#" alt="foto">
+        </div>
+
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Nome: </p>
+            </div>
+            <input class="i_text" type="text" formControlName="nome">
+            <a class="button">Alterar Nome</a>
+        </div>
+
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">CPF: </p>
+            </div>
+            <input class="i_text" type="text" formControlName="cpf">
+            <a class="button">Alterar CPF</a>
+        </div>
+
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Telefone: </p>
+            </div>
+            <input class="i_text" type="text" formControlName="telefone">
+            <a class="button">Alterar telefone</a>
+        </div>
+
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">E-mail: </p>
+            </div>
+            <input class="i_text" type="text" formControlName="email">
+            <a class="button">Alterar e-mail</a>
+        </div>
+
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Senha: </p>
+            </div>
+            <input class="i_text" type="password" formControlName="senha">
+            <a class="button">Alterar senha</a>
+        </div>
+
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Função: </p>
+            </div>
+            <input class="i_text" type="text" formControlName="funcao">
+            <a class="button">Alterar função</a>
+        </div>
+
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Funcionário: </p>
+            </div>
+            <p class="p_form">ATIVO NO SISTEMA</p>
+            <a class="button">Desativar</a>
+            <a class="button">Ativar</a>
+        </div>
+
