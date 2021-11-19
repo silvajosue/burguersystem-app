@@ -17,4 +17,9 @@ export class FuncionarioService extends BaseService{
     let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
     return this.http.post<any>(this.urlBase + this.rota + '/cadastrar', funcionario, this.criaHeader(token));
   }
+
+  public getFuncionarios(usuario: UsuarioDTO): Observable<UsuarioDTO[]> {
+    let token = usuario.tokenDTO.tipo + '' + usuario.tokenDTO.token;
+    return this.http.get<UsuarioDTO[]>(this.urlBase + '/consultar', this.criaHeader(token) );
+  }
 }

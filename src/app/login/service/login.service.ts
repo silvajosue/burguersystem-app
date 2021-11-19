@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BaseService } from 'src/app/shared/service/BaseService';
 import { Login } from '../model/Login';
+import { UsuarioDTO } from '../model/UsuarioDTO';
 
 @Injectable({
   providedIn: 'root'
