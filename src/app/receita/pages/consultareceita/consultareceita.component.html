@@ -6,21 +6,21 @@
             <div class="p_formulario">
                 <p class="p_form">Buscar Receita</p>
             </div>
-            <input class="i_text" type="text" formControlName="nome">
+            <input class="i_text" type="text" formControlName="buscaNome">
             <a class="button">Buscar</a>
         </div>
         <div class="i_preencher">
             <div class="p_formulario">
                 <p class="p_form">Nome da receita</p>
             </div>
-            <input placeholder="X Tudo" class="i_text" type="text" formControlName="preco">
+            <input placeholder="X Tudo" class="i_text" type="text" formControlName="nome">
             <a class="button">Atualizar Nome</a>
         </div>
         <div class="i_preencher">
             <div class="p_formulario">
                 <p class="p_form">Categoria </p>
             </div>
-            <input placeholder="Hamburguer" class="i_text" type="text" formControlName="quantidade">
+            <input placeholder="Hamburguer" class="i_text" type="text" formControlName="categoria">
             <a class="button">Atualizar Categoria</a>
         </div>
         <div class="i_preencher">
@@ -33,7 +33,7 @@
             <div class="p_formulario">
                 <p class="p_form">Ingrediente </p>
             </div>
-            <input placeholder="Hamburguer" class="i_text" type="text" formControlName="quantidade">
+            <input placeholder="Hamburguer" class="i_text" type="text" formControlName="iNome">
             <div class="p_formulario">
                 <p class="p_form">Quantidade </p>
             </div>
@@ -41,38 +41,8 @@
             <div class="p_formulario">
                 <p class="p_form">Medida </p>
             </div>
-            <input placeholder="Unidade" class="i_text" type="text" formControlName="quantidade">
-            <a class="button">Alterar Ingrediente</a>
-        </div>
-        <div class="i_preencher">
-            <div class="p_formulario">
-                <p class="p_form">Ingrediente </p>
-            </div>
-            <input placeholder="Pão de gergelim" class="i_text" type="text" formControlName="quantidade">
-            <div class="p_formulario">
-                <p class="p_form">Quantidade </p>
-            </div>
-            <input placeholder="1" class="i_text" type="text" formControlName="quantidade">
-            <div class="p_formulario">
-                <p class="p_form">Medida </p>
-            </div>
-            <input placeholder="Unidade" class="i_text" type="text" formControlName="quantidade">
-            <a class="button">Alterar Ingrediente</a>
-        </div>
-        <div class="i_preencher">
-            <div class="p_formulario">
-                <p class="p_form">Ingrediente </p>
-            </div>
-            <input placeholder="Queijo Prato" class="i_text" type="text" formControlName="quantidade">
-            <div class="p_formulario">
-                <p class="p_form">Quantidade </p>
-            </div>
-            <input placeholder="200" class="i_text" type="text" formControlName="quantidade">
-            <div class="p_formulario">
-                <p class="p_form">Medida </p>
-            </div>
-            <input placeholder="gramas" class="i_text" type="text" formControlName="quantidade">
-            <a class="button">Alterar Ingrediente</a>
+            <input placeholder="Unidade" class="i_text" type="text" formControlName="medida">
+            <a class="button" (onclick)="alteraI">Alterar Ingrediente</a>
         </div>
         <div class="i_preencher">
             <div class="p_formulario">

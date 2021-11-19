@@ -20,8 +20,7 @@ import { ConsultafuncionarioComponent } from './funcionario/consultafuncionario/
     HomegerenteComponent,
     HomeatendenteComponent,
     StatuspedidoComponent,
-    ConsultaestoqueComponent,
-    ConsultafuncionarioComponent
+    ConsultaestoqueComponent
   ],
   imports: [
     BrowserModule,
