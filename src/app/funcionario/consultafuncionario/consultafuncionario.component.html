@@ -21,7 +21,7 @@
                 <p class="p_form">Nome: </p>
             </div>
             <input placeholder="João da Silva" class="i_text" type="text" formControlName="nome">
-            <a class="button">Alterar Nome</a>
+            <a class="button" (click)="alteraNome()">Alterar Nome</a>
         </div>
 
         <div class="i_preencher">
@@ -29,7 +29,7 @@
                 <p class="p_form">CPF: </p>
             </div>
             <input placeholder="111.222.333-4" class="i_text" type="text" formControlName="cpf">
-            <a class="button">Alterar CPF</a>
+            <a class="button" (click)="alteraCPF()">Alterar CPF</a>
         </div>
 
         <div class="i_preencher">
@@ -37,7 +37,7 @@
                 <p class="p_form">Telefone: </p>
             </div>
             <input placeholder="(16) 99999-8888" class="i_text" type="text" formControlName="telefone">
-            <a class="button">Alterar telefone</a>
+            <a class="button" (click)="alteraTelefone()">Alterar telefone</a>
         </div>
 
         <div class="i_preencher">
@@ -45,7 +45,7 @@
                 <p class="p_form">E-mail: </p>
             </div>
             <input placeholder="email@email.com" class="i_text" type="text" formControlName="email">
-            <a class="button">Alterar e-mail</a>
+            <a class="button" (click)="alteraEmail()">Alterar e-mail</a>
         </div>
 
         <div class="i_preencher">
@@ -53,15 +53,15 @@
                 <p class="p_form">Senha: </p>
             </div>
             <input placeholder="1234" class="i_text" type="text" formControlName="senha">
-            <a class="button">Alterar senha</a>
+            <a class="button" (click)="alteraSenha()">Alterar senha</a>
         </div>
 
         <div class="i_preencher">
             <div class="p_formulario">
                 <p class="p_form">Função: </p>
             </div>
-            <input placeholder="atendente" class="i_text" type="text" formControlName="funcao">
-            <a class="button">Alterar função</a>
+            <input placeholder="atendente" class="i_text" type="text" formControlName="role">
+            <a class="button" (click)="alteraRole()">Alterar função</a>
         </div>
 
         <div class="i_preencher">
