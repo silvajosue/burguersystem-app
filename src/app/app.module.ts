@@ -10,8 +10,6 @@ import { HomecozinheiroComponent } from './home/homecozinheiro/homecozinheiro.co
 import { HomegerenteComponent } from './home/homegerente/homegerente.component';
 import { HomeatendenteComponent } from './home/homeatendente/homeatendente.component';
 import { StatuspedidoComponent } from './pedido/pages/statuspedido/statuspedido.component';
-import { ConsultaestoqueComponent } from './estoque/consultaestoque/consultaestoque.component';
-import { ConsultafuncionarioComponent } from './funcionario/consultafuncionario/consultafuncionario.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +18,6 @@ import { ConsultafuncionarioComponent } from './funcionario/consultafuncionario/
     HomegerenteComponent,
     HomeatendenteComponent,
     StatuspedidoComponent,
-    ConsultaestoqueComponent
   ],
   imports: [
     BrowserModule,

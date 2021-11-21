@@ -10,7 +10,7 @@ import { InputTextModule } from 'primeng-lts/inputtext';
 import { ButtonModule } from 'primeng-lts/button';
 import { FuncionarioService } from './service/funcionario.service';
 import { ConsultafuncionarioComponent } from './consultafuncionario/consultafuncionario.component';
-
+import {TableModule} from 'primeng/table';
 
 
 @NgModule({
@@ -30,6 +30,7 @@ import { ConsultafuncionarioComponent } from './consultafuncionario/consultafunc
     InputTextModule,
     ReactiveFormsModule,
     ButtonModule,
+    TableModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [FuncionarioRoutingModule, FuncionarioService]

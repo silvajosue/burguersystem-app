@@ -11,9 +11,11 @@ import { DropdownModule } from 'primeng-lts/dropdown';
 import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
 import { ProdutoRoutingModule } from './produto-routing.module';
 import { ProdutoService } from './service/produto.service';
+import { ConsultaestoqueComponent } from './consultaestoque/consultaestoque.component';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
-  declarations: [CadastrarProdutoComponent],
+  declarations: [CadastrarProdutoComponent, ConsultaestoqueComponent],
   imports: [
     CommonModule,
     ProdutoRoutingModule,
@@ -25,7 +27,8 @@ import { ProdutoService } from './service/produto.service';
     InputTextModule,
     ReactiveFormsModule,
     ButtonModule,
-    DropdownModule
+    DropdownModule,
+    TableModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [ProdutoRoutingModule, ProdutoService]

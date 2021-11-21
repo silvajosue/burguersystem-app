@@ -6,5 +6,5 @@ export class ProdutoDTO{
     public nome: String;
     public preco: Number;
     public foto: String;
-    public quantidade: Number;
+    public quantidadeEst: Number;
 }

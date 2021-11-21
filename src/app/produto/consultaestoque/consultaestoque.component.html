@@ -1,0 +1,47 @@
+<p-card class="card-style">
+    <a class="button" href="#">Voltar</a>
+    <h1 class="titulo">Consulta Estoque</h1>
+        <div class="i_preencher">
+            <div class="p_formulario">
+                <p class="p_form">Produto</p>
+            </div>
+            <input class="i_text" type="text" [(ngModel)]="consultar">
+            <a class="button">Buscar</a>
+        </div>
+        <hr>
+</p-card>
+
+<p-card>
+
+    <p-table [value]="produtos" responsiveLayout="scroll">
+        <ng-template pTemplate="header">
+            <tr>
+                <th></th>
+                <th>Código</th>
+                <th>Categoria</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-f>
+            <tr>
+                <td>
+                    <div>
+                        <a (click)="remover(f)">
+                            <i class="pi pi-trash" > </i >
+                        </a>
+                        <a (click)="alterar(f)">
+                            <i class="pi pi-cog" ></i>
+                        </a>
+                    </div>
+                </td>
+                <td>{{f.id}}</td>
+                <td>{{f.categoria.nome}}</td>
+                <td>{{f.nome}}</td>
+                <td>{{formataValor(f.preco)}}</td>
+                <td>{{f.quantidadeEst}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</p-card>

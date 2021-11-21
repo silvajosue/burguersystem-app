@@ -20,6 +20,6 @@ export class FuncionarioService extends BaseService{
 
   public getFuncionarios(usuario: UsuarioDTO): Observable<UsuarioDTO[]> {
     let token = usuario.tokenDTO.tipo + '' + usuario.tokenDTO.token;
-    return this.http.get<UsuarioDTO[]>(this.urlBase + '/consultar', this.criaHeader(token) );
+    return this.http.get<UsuarioDTO[]>(this.urlBase + this.rota + '/consultar', this.criaHeader(token) );
   }
 }

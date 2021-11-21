@@ -10,7 +10,6 @@ import { PedidoModule } from './pedido/pedido.module';
 import { HomecozinheiroModule } from './home/homecozinheiro/homecozinheiro.module';
 import { HomegerenteModule } from './home/homegerente/homegerente.module';
 import { HomeatendenteModule } from './home/homeatendente/homeatendente.module';
-import { ConsultaestoqueModule } from './estoque/consultaestoque/consultaestoque.module';
 
 const routes: Routes = [
   {
@@ -52,10 +51,6 @@ const routes: Routes = [
   {
     path: 'homeatendente',
     loadChildren: () => HomeatendenteModule
-  },
-  {
-    path: 'consultaestoque',
-    loadChildren: () => ConsultaestoqueModule
   },
   {
     path: 'cozinha',

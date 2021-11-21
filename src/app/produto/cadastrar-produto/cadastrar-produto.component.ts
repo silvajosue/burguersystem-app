@@ -91,7 +91,7 @@ export class CadastrarProdutoComponent implements OnInit {
     this.produto.preco = Number(this.formulario.get('preco').value);
     this.produto.categoria = this.categoria == null ? this.formulario.get('categoria').value : this.categoria;
     this.produto.foto = String(this.formulario.get('foto').value);
-    this.produto.quantidade = Number(this.formulario.get('quantidade').value);
+    this.produto.quantidadeEst = Number(this.formulario.get('quantidade').value);
 
     console.log(this.produto)
 
