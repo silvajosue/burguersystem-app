@@ -10,10 +10,12 @@ import { FieldsetModule } from 'primeng-lts/fieldset';
 import { InputTextModule } from 'primeng-lts/inputtext';
 import { ButtonModule } from 'primeng-lts/button';
 import { MaterialService } from './service/material.service';
+import { ConsultarMaterialComponent } from './pages/consultar-material/consultar-material.component';
+import { TableModule } from 'primeng/table';
 
 
 @NgModule({
-  declarations: [CadastrarMaterialComponent],
+  declarations: [CadastrarMaterialComponent, ConsultarMaterialComponent],
   imports: [
     CommonModule,
     MaterialRoutingModule,
@@ -25,6 +27,7 @@ import { MaterialService } from './service/material.service';
     InputTextModule,
     ReactiveFormsModule,
     ButtonModule,
+    TableModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [MaterialRoutingModule, MaterialService]

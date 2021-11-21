@@ -17,7 +17,7 @@ export class MaterialService extends BaseService {
   }
 
   public getListaMateriais(usuarioSessao: UsuarioDTO): Observable<MaterialDTO[]>{
-    let token = usuarioSessao.$token.$tipo + '' + usuarioSessao.$token.$token;
+    let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
     console.log(usuarioSessao);
     console.log(token);
     return this.http.get<MaterialDTO[]>(this.urlBase + this.rota, this.criaHeader(token));

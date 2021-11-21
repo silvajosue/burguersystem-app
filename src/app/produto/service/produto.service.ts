@@ -22,9 +22,9 @@ export class ProdutoService extends BaseService {
     return this.http.post<any>(this.urlBase + this.rota + '/cadastrarProduto', produto, this.criaHeader(token));
   }
 
-  public getCategorias(usuarioSessao: UsuarioDTO): Observable<any> {
+  public getCategorias(usuarioSessao: UsuarioDTO): Observable<CategoriaDTO[]> {
     let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
-    return this.http.get<any>(this.urlBase + 'api/categoria', this.criaHeader(token));
+    return this.http.get<CategoriaDTO[]>(this.urlBase + 'api/categoria', this.criaHeader(token));
   }
 
   public postCategoria(categoria: CategoriaDTO, usuarioSessao: UsuarioDTO): Observable<any> {
@@ -34,7 +34,17 @@ export class ProdutoService extends BaseService {
 
   public getProdutos(usuarioSessao: UsuarioDTO): Observable<ProdutoDTO[]> {
     let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
-    return this.http.get<ProdutoDTO[]>(this.urlBase + 'api/produto', this.criaHeader(token));
+    return this.http.get<ProdutoDTO[]>(this.urlBase + this.rota, this.criaHeader(token));
+  }
+
+  public removeProduto(usuarioSessao: UsuarioDTO, produto: ProdutoDTO): Observable<any>{
+    let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
+    return this.http.post<any>(this.urlBase + this.rota + '/remover', produto, this.criaHeader(token))
+  }
+
+  public atualizaProduto(usuarioSessao: UsuarioDTO, produto: ProdutoDTO): Observable<any>{
+    let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
+    return this.http.put<any>(this.urlBase + this.rota + '/remover', produto, this.criaHeader(token))
   }
 
 }

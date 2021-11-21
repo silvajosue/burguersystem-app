@@ -1,0 +1,88 @@
+.usuario-login{
+    text-align: center;
+    position: relative;
+    
+}
+
+*{
+    font-size: 1.7vw;
+    font: bolder;
+}
+
+.card-style{
+    width: 25rem;
+    margin-bottom: 2em;
+    position: relative;
+}
+.username{
+    font-family: 'Dancing Script';
+    font-size: 22px;
+}
+.div-style{
+    width: 60%;
+    margin: 30px 25%;
+}
+
+
+p-footer{
+    align-items: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    left: 40%
+}
+
+.titulo{
+    font-size: 2rem;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.formulario{
+    display: block;
+    flex-direction: row;
+}
+.i_preencher{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    width: auto;
+}
+.p_formulario{
+    display: block;
+    flex-direction: row;
+    text-align: right;
+    padding-right: 10px;
+    min-width: 15%;
+}
+.i_text{
+    width: 90%;
+}
+.fim_pagina{
+    display: block;
+    flex-direction: row;
+    width: auto;
+}
+.bt_form{
+    display: block;
+    flex-direction: row;
+    text-align: right;
+}
+.fim_pagina{
+    display: block;
+    flex-direction: row;
+    text-align: right;
+    padding: 20px;
+    padding-left: 16%;
+}
+.button{
+    float: center; 
+    border:1px solid; 
+    padding: 11px 21px; 
+    vertical-align: middle;
+    background:#2D888F; 
+    color:white;
+    border-radius:6px; 
+    font-size: 20px; 
+    font-family:helvetica, serif;
+    text-decoration:none;
+}

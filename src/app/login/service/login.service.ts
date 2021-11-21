@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ClienteDTO } from 'src/app/dto/ClienteDTO';
 import { BaseService } from 'src/app/shared/service/BaseService';
 import { Login } from '../model/Login';
 import { UsuarioDTO } from '../model/UsuarioDTO';

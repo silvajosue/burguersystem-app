@@ -13,6 +13,7 @@ import { ProdutoRoutingModule } from './produto-routing.module';
 import { ProdutoService } from './service/produto.service';
 import { ConsultaestoqueComponent } from './consultaestoque/consultaestoque.component';
 import {TableModule} from 'primeng/table';
+import { DialogModule } from 'primeng-lts/dialog';
 
 @NgModule({
   declarations: [CadastrarProdutoComponent, ConsultaestoqueComponent],
@@ -28,7 +29,8 @@ import {TableModule} from 'primeng/table';
     ReactiveFormsModule,
     ButtonModule,
     DropdownModule,
-    TableModule
+    TableModule,
+    DialogModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [ProdutoRoutingModule, ProdutoService]

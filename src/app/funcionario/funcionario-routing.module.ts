@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ConsultafuncionarioComponent } from './consultafuncionario/consultafuncionario.component';
 import { CadfuncionarioComponent } from './pages/cadastro-funcionario/cadfuncionario.component';
+import { ConsultafuncionarioComponent } from './pages/consultafuncionario/consultafuncionario.component';
 
 const routes: Routes = [
   {

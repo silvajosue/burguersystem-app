@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { UsuarioDTO } from 'src/app/login/model/UsuarioDTO';
 import { LoginService } from 'src/app/login/service/login.service';
-import { FuncionarioService } from '../service/funcionario.service';
+import { FuncionarioService } from '../../service/funcionario.service';
 
 @Component({
   selector: 'app-consultafuncionario',

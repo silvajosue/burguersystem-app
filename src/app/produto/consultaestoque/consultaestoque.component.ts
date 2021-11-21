@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { UsuarioDTO } from 'src/app/login/model/UsuarioDTO';
 import { ProdutoDTO } from '../model/ProdutoDTO';
 import { ProdutoService } from '../service/produto.service';
@@ -6,13 +6,13 @@ import { ProdutoService } from '../service/produto.service';
 @Component({
   selector: 'app-consultaestoque',
   templateUrl: './consultaestoque.component.html',
-  styleUrls: ['./consultaestoque.component.css']
+  styleUrls: ['./consultaestoque.component.css'],
 })
 export class ConsultaestoqueComponent implements OnInit {
 
   public produtos: ProdutoDTO[];
   private usuario: UsuarioDTO = null;
-  public consultar;
+  public consultar: string;
 
   constructor(private service: ProdutoService) { }
 
@@ -43,7 +43,12 @@ export class ConsultaestoqueComponent implements OnInit {
 
 
    public remover(produto: ProdutoDTO){
-    console.log(produto);
+     console.log(produto);
+     confirm("deseja realmente excluir o produto `produto.nome`?")
+  }
+  
+  eventoConfirma() {
+    alert("OK!");
   }
 
   public alterar(produto: ProdutoDTO){

@@ -21,4 +21,9 @@ export class ClienteService extends BaseService {
     let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
     return this.http.post<any>(this.urlBase + this.rota + '/cadastrarCliente', cliente, this.criaHeader(token));
   }
+
+  public getClientes(usuarioSessao: UsuarioDTO): Observable<ClienteDTO[]>{
+    let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
+    return this.http.get<ClienteDTO[]>(this.urlBase + this.rota, this.criaHeader(token));
+  }
 }
