@@ -1,5 +1,7 @@
+import { PedidoDTO } from "./PedidoDTO";
+
 export class ItensDoPedidoDTO{
-    pedido: number;
+    pedido: PedidoDTO;
     produto: number;
     quantidade: number;
     observacao: String;  
