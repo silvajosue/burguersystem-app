@@ -44,7 +44,19 @@ export class ConsultarMaterialComponent implements OnInit {
 
 
    public remover(material: MaterialDTO){
-     console.log(material);
+    this.usuario = JSON.parse(sessionStorage.getItem("usuarioSessao"));
+    console.log(material);
+    this.service.deleteMaterial(material,this.usuario).subscribe(
+      sucesso => {
+        console.log(sucesso);
+        console.log(this.materiais);
+        this.buscarMateriais();
+      },
+      erro => {
+        console.log(erro)
+        alert(erro);
+      }
+    );
   }
   
 

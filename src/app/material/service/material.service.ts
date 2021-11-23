@@ -27,4 +27,10 @@ export class MaterialService extends BaseService {
     let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
     return this.http.post<any>(this.urlBase + this.rota + '/cadastrarMaterial', material, this.criaHeader(token));
   }
+
+  public deleteMaterial(material: MaterialDTO, usuarioSessao: UsuarioDTO): Observable<any>{
+    console.log(usuarioSessao);
+    let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
+    return this.http.post<any>(this.urlBase + this.rota + '/deletarMaterial',material,  this.criaHeader(token));
+  }
 }
