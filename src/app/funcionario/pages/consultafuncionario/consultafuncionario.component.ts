@@ -36,5 +36,22 @@ export class ConsultafuncionarioComponent implements OnInit {
     );
   }
 
+  public remover(funcionario: UsuarioDTO){
+    this.usuario = JSON.parse(sessionStorage.getItem("usuarioSessao"));
+    
+     console.log(this.usuario);
+     if(confirm(`Deseja realmente excluir o usuário "${funcionario.nome}"?`)){
+        this.service.deleteFuncionario(funcionario,this.usuario).subscribe(
+          sucesso => {
+            console.log(sucesso);
+            console.log(this.funcionarios);
+            this.buscaFuncionarios();
+          },
+          erro => {
+            console.log(erro)
+          }
+        );
+     }
+  }
 
 }

@@ -89,6 +89,7 @@
  <p-table [value]="funcionarios" responsiveLayout="scroll">
     <ng-template pTemplate="header">
         <tr>
+            <th></th>
             <th>Código</th>
             <th>Nome</th>
             <th>CPf</th>
@@ -98,7 +99,17 @@
     </ng-template>
     <ng-template pTemplate="body" let-f>
         <tr>
-            <td>{{f.codigoUsuario}}</td>
+            <td>
+                <div>
+                    <a (click)="remover(f)">
+                        <i class="pi pi-trash" > </i >
+                    </a>
+                    <a (click)="alterar(f)">
+                        <i class="pi pi-cog" ></i>
+                    </a>
+                </div>
+            </td>
+            <td>{{f.id}}</td>
             <td>{{f.nome}}</td>
             <td>{{f.cpf}}</td>
             <td>{{f.telefone}}</td>

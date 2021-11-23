@@ -22,19 +22,18 @@ export class ConsultaestoqueComponent implements OnInit {
 
   public buscarProdutos() {
     this.usuario = JSON.parse(sessionStorage.getItem("usuarioSessao"));
- 
-     this.service.getProdutos(this.usuario).subscribe(
-       sucesso => {
-         this.produtos = sucesso;
-         console.log(this.produtos);
-         this.usuario = null;
-       },
-       erro => {
-         console.log(erro)
-         alert(erro);
-       }
-     );
-   }
+    this.service.getProdutos(this.usuario).subscribe(
+      sucesso => {
+        this.produtos = sucesso;
+        console.log(this.produtos);
+        this.usuario = null;
+      },
+      erro => {
+        console.log(erro)
+        alert(erro);
+      }
+    );
+  }
 
    public formataValor(valor){
      let v = String(valor)
@@ -43,8 +42,21 @@ export class ConsultaestoqueComponent implements OnInit {
 
 
    public remover(produto: ProdutoDTO){
-     console.log(produto);
-     confirm("deseja realmente excluir o produto `produto.nome`?")
+    this.usuario = JSON.parse(sessionStorage.getItem("usuarioSessao"));
+    
+     console.log(this.usuario);
+     if(confirm(`Deseja realmente excluir o produto "${produto.nome}"?`)){
+        this.service.deleteProduto(produto,this.usuario).subscribe(
+          sucesso => {
+            console.log(sucesso);
+            console.log(this.produtos);
+            this.buscarProdutos();
+          },
+          erro => {
+            console.log(erro)
+          }
+        );
+     }
   }
   
   eventoConfirma() {

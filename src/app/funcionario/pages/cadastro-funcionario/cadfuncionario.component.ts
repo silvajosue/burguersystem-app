@@ -53,6 +53,7 @@ export class CadfuncionarioComponent implements OnInit {
 
     this.usuario = JSON.parse(sessionStorage.getItem("usuarioSessao"));
 
+    console.log('usuario');
     console.log(usuario);
 
     this.service.postFuncionario(usuario, this.usuario).subscribe(

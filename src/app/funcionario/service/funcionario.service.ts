@@ -14,10 +14,16 @@ export class FuncionarioService extends BaseService{
   constructor(public http: HttpClient) {  super()}
 
   postFuncionario(funcionario: UsuarioDTO, usuarioSessao: UsuarioDTO): Observable<any> {
+    console.log(funcionario);
     let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
     return this.http.post<any>(this.urlBase + this.rota + '/cadastrar', funcionario, this.criaHeader(token));
   }
 
+  public deleteFuncionario(funcionario: UsuarioDTO, usuarioSessao: UsuarioDTO): Observable<any>{
+    console.log(usuarioSessao);
+    let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
+    return this.http.post<any>(this.urlBase + this.rota + '/deletarFuncionario',funcionario, this.criaHeader(token));
+  }
   public getFuncionarios(usuario: UsuarioDTO): Observable<UsuarioDTO[]> {
     let token = usuario.tokenDTO.tipo + '' + usuario.tokenDTO.token;
     return this.http.get<UsuarioDTO[]>(this.urlBase + this.rota + '/consultar', this.criaHeader(token) );

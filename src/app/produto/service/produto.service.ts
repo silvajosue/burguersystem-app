@@ -37,9 +37,10 @@ export class ProdutoService extends BaseService {
     return this.http.get<ProdutoDTO[]>(this.urlBase + this.rota, this.criaHeader(token));
   }
 
-  public removeProduto(usuarioSessao: UsuarioDTO, produto: ProdutoDTO): Observable<any>{
+  public deleteProduto(produto: ProdutoDTO, usuarioSessao: UsuarioDTO): Observable<any>{
+    console.log(usuarioSessao);
     let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
-    return this.http.post<any>(this.urlBase + this.rota + '/remover', produto, this.criaHeader(token))
+    return this.http.post<any>(this.urlBase + this.rota + '/deletarProduto',produto, this.criaHeader(token));
   }
 
   public atualizaProduto(usuarioSessao: UsuarioDTO, produto: ProdutoDTO): Observable<any>{
