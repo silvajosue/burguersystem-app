@@ -71,9 +71,11 @@ p-footer{
 .fim_pagina{
     display: block;
     flex-direction: row;
-    text-align: right;
-    padding: 20px;
-    padding-left: 16%;
+    text-align: center;
+    align-items:center;
+    align-content: center;
+    padding: 1;
+    padding-left: 42%;
 }
 .button{
     float: center; 
