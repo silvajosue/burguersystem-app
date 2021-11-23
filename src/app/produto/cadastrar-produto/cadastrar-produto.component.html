@@ -35,7 +35,11 @@
             <div class="p_formulario">
                 <p class="p_form">Foto </p>
             </div>
-            <input class="i_text" type="text" formControlName="foto">
+            <!-- <input class="i_text" type="text" > -->
+            <img class="preview-image" [src]="imageFile ? imageFile.link : 'localhost/image.png'">
+            <input #imageInput
+            type="file"
+            accept="image/*" (change)="imagemPreview($event)" formControlName="foto">
         </div>
     </form>
     <div class="fim_pagina">

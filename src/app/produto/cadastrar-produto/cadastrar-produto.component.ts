@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CategoriaDTO } from 'src/app/dto/CategoriaDTO';
@@ -18,6 +19,10 @@ export class CadastrarProdutoComponent implements OnInit {
   public outro: Boolean = false;
   public categorias: CategoriaDTO[];
   public categoria: CategoriaDTO = null;
+  imgURL: any;
+  imageFile: { link: string; file: any; name: string; };
+  imagem: string;
+  modelvalue: string | ArrayBuffer;
 
   constructor(private formBuilder: FormBuilder, private service: ProdutoService) { }
 
@@ -58,6 +63,26 @@ export class CadastrarProdutoComponent implements OnInit {
     });
   }
 
+  imagemPreview(event) {
+    if (event.target.files && event.target.files[0]) {
+        const reader = new FileReader();
+        let img = this;
+
+        reader.onload = (_event: any) => {
+            this.imageFile = {
+                link: _event.target.result,
+                file: event.srcElement.files[0],
+                name: event.srcElement.files[0].name
+            };
+            img.modelvalue = reader.result;
+            console.log(img.modelvalue);
+            this.imagem = String(img.modelvalue);
+            console.log(this.imagem);
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+}
+
   public cadastrar(): void{
     
     this.usuario = JSON.parse(sessionStorage.getItem("usuarioSessao"));
@@ -90,7 +115,7 @@ export class CadastrarProdutoComponent implements OnInit {
     this.produto.nome = String(this.formulario.get('nome').value);
     this.produto.preco = Number(this.formulario.get('preco').value);
     this.produto.categoria = this.categoria == null ? this.formulario.get('categoria').value : this.categoria;
-    this.produto.foto = String(this.formulario.get('foto').value);
+    this.produto.foto = this.imagem;
     this.produto.quantidadeEst = Number(this.formulario.get('quantidade').value);
 
     console.log(this.produto)

@@ -44,7 +44,7 @@ export class ProdutoService extends BaseService {
 
   public atualizaProduto(usuarioSessao: UsuarioDTO, produto: ProdutoDTO): Observable<any>{
     let token = usuarioSessao.tokenDTO.tipo + '' + usuarioSessao.tokenDTO.token;
-    return this.http.put<any>(this.urlBase + this.rota + '/remover', produto, this.criaHeader(token))
+    return this.http.put<any>(this.urlBase + this.rota + '/atualiza', produto, this.criaHeader(token))
   }
 
 }
