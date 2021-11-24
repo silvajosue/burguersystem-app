@@ -14,6 +14,9 @@ export class ConsultarMaterialComponent implements OnInit {
   public materiais: MaterialDTO[];
   private usuario: UsuarioDTO = null;
   public consultar: string;
+  public conn = 1;
+  public mostra: [Number, Number];
+
 
   constructor(private service: MaterialService) { }
 
@@ -28,11 +31,15 @@ export class ConsultarMaterialComponent implements OnInit {
        sucesso => {
          this.materiais = sucesso;
          console.log(this.materiais);
+         this.materiais.forEach(material => {
+           this.mostra.push[material.id,1];
+         });
+         console.log(this.mostra);
          this.usuario = null;
        },
        erro => {
+          this.materiais = [];
          console.log(erro)
-         alert(erro);
        }
      );
    }
@@ -42,6 +49,16 @@ export class ConsultarMaterialComponent implements OnInit {
      return 'R$' + v.replace(".", ",");
    }
 
+   public teste(f){
+    // console.log(f.id);
+    // console.log(this.materiais);
+    // console.log(this.materiais[f.id]);
+    this.materiais.forEach(material => {
+      if(material.id == f.id)
+        console.log(material);
+    });
+     return true;
+   }
 
    public remover(material: MaterialDTO){
     this.usuario = JSON.parse(sessionStorage.getItem("usuarioSessao"));

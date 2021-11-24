@@ -29,8 +29,8 @@ export class ConsultaestoqueComponent implements OnInit {
         this.usuario = null;
       },
       erro => {
+        this.produtos = [];
         console.log(erro)
-        alert(erro);
       }
     );
   }

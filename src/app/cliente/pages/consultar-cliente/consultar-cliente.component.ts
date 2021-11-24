@@ -27,8 +27,8 @@ export class ConsultarClienteComponent implements OnInit {
          console.log(this.clientes);
        },
        erro => {
+        this.clientes = [];
          console.log(erro)
-         alert(erro);
        }
      );
    }
@@ -37,7 +37,7 @@ export class ConsultarClienteComponent implements OnInit {
     
     console.log(this.usuario);
     console.log(cliente);
-     if(confirm(`Deseja realmente excluir o produto "${cliente.nome}"?`)){
+     if(confirm(`Deseja realmente excluir o cliente "${cliente.nome}"?`)){
         this.service.deleteCliente(cliente,this.usuario).subscribe(
           sucesso => {
             console.log(sucesso);

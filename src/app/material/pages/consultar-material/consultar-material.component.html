@@ -19,13 +19,32 @@
                 <th></th>
                 <th>Código</th>
                 <th>Nome</th>
-                <th>Quantiadade</th>
+                <th>Quantidade</th>
                 <th>Unidade de Medida</th>
                 <th>Preço</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-f>
-            <tr>
+            <ng-container *ngIf="teste(f)">
+                <tr>
+                    <td>
+                        <div>
+                            <a (click)="remover(f)">
+                                <i class="pi pi-trash" > </i >
+                            </a>
+                            <a (click)="alterar(f)">
+                                <i class="pi pi-cog" ></i>
+                            </a>
+                        </div>
+                    </td>
+                    <td>{{f.id}}</td>
+                    <td>{{f.nome}}</td>
+                    <td>{{f.quantidade}}</td>
+                    <td>{{f.unidadeMedida}}</td>
+                    <td>{{formataValor(f.preco)}}</td>
+                </tr>
+            </ng-container>   
+            <!-- <tr *ngIf="conn == 0">
                 <td>
                     <div>
                         <a (click)="remover(f)">
@@ -36,12 +55,12 @@
                         </a>
                     </div>
                 </td>
-                <td>{{f.id}}</td>
-                <td>{{f.nome}}</td>
-                <td>{{f.quantidade}}</td>
-                <td>{{f.unidadeMedida}}</td>
-                <td>{{formataValor(f.preco)}}</td>
-            </tr>
+                <td><input type="text" placeholder="{{f.id}}" name="" id="id {{f.id}}"></td>
+                <td><input type="text" placeholder="{{f.nome}}" name="" id="nome {{f.id}}"></td>
+                <td><input type="text" placeholder="{{f.quantidade}}" name="" id="quantidade {{f.id}}"></td>
+                <td><input type="text" placeholder="{{f.unidadeMedida}}" name="" id="um {{f.id}}"></td>
+                <td><input type="text" placeholder="{{formataValor(f.preco)}}" name="" id="f.preco {{f.id}}"></td>
+            </tr> -->
         </ng-template>
     </p-table>
 </p-card>
