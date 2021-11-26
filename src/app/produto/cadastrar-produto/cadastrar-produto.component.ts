@@ -30,9 +30,9 @@ export class CadastrarProdutoComponent implements OnInit {
     this.buscaCategorias();
     this.createForm();
   }
-  
   buscaCategorias() {
     
+
     this.usuario = JSON.parse(sessionStorage.getItem("usuarioSessao"));
 
     this.service.getCategorias(this.usuario).subscribe(
@@ -42,10 +42,8 @@ export class CadastrarProdutoComponent implements OnInit {
         categoria.nome = 'Outra';
         this.categorias = sucesso;
         this.categorias.push(categoria);
-        console.log(this.categorias)
       },
       erro => {
-        console.log(erro)
         alert(erro);
       }
     );
@@ -75,9 +73,7 @@ export class CadastrarProdutoComponent implements OnInit {
                 name: event.srcElement.files[0].name
             };
             img.modelvalue = reader.result;
-            console.log(img.modelvalue);
             this.imagem = String(img.modelvalue);
-            console.log(this.imagem);
         };
         reader.readAsDataURL(event.target.files[0]);
     }
@@ -86,16 +82,12 @@ export class CadastrarProdutoComponent implements OnInit {
   public cadastrar(): void{
     
     this.usuario = JSON.parse(sessionStorage.getItem("usuarioSessao"));
-
     if(this.outro){
-      let categoria = this.formulario.get('categoria').value;
-      categoria.id = null;
+      let categoria = new CategoriaDTO;
       categoria.nome = this.formulario.get('novaCategoria').value;
       this.service.postCategoria(categoria, this.usuario).subscribe(
         sucesso => {
-          console.log(sucesso);
           this.categoria = sucesso;
-          console.log(this.categoria)
           this.cadastrarProduto();
         },
         erro => {
@@ -111,14 +103,11 @@ export class CadastrarProdutoComponent implements OnInit {
   cadastrarProduto(){
     
     this.produto = new ProdutoDTO();
-    console.log(String(this.formulario.get('nome').value))
     this.produto.nome = String(this.formulario.get('nome').value);
     this.produto.preco = Number(this.formulario.get('preco').value);
     this.produto.categoria = this.categoria == null ? this.formulario.get('categoria').value : this.categoria;
     this.produto.foto = this.imagem;
-    this.produto.quantidadeEst = Number(this.formulario.get('quantidade').value);
-
-    console.log(this.produto)
+    this.produto.quantidadeEst = Number(this.formulario.get('quantidade').value)
 
     this.service.postProduto(this.produto, this.usuario).subscribe(
       (sucesso) => {
@@ -136,7 +125,6 @@ export class CadastrarProdutoComponent implements OnInit {
   }
 
   public verificarOpcao(){
-    console.log(this.formulario.get('categoria').value);
     let opcao = this.formulario.get('categoria').value;
     if(opcao.nome === 'Outra'){
       this.outro = true;

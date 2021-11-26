@@ -28,14 +28,13 @@
                 (click)="verificarOpcao()">
             </p-dropdown>
             <div class="p_formulario" *ngIf="outro">
-                <input placeholder="Digite o nome da categoria!">
+                <input formControlName="novaCategoria" placeholder="Digite o nome da categoria!">
             </div>
         </div>
         <div class="i_preencher">
             <div class="p_formulario">
                 <p class="p_form">Foto </p>
             </div>
-            <!-- <input class="i_text" type="text" > -->
             <img class="preview-image" [src]="imageFile ? imageFile.link : 'localhost/image.png'">
             <input #imageInput
             type="file"
@@ -47,7 +46,7 @@
             <tr>
                 <td>
                     <div>
-                        <a class="button" (click)="cadastrarProduto()">Cadastrar</a>
+                        <a class="button" (click)="cadastrar()">Cadastrar</a>
                     </div>
                 </td>
                 <td>
